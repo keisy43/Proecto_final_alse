@@ -6,6 +6,7 @@
 #include <sqlite3.h>
 
 using namespace std;
+
 /**
  * @brief The db_Local class
  * Esta clase maneja la conexión con la bases de datos en
@@ -28,10 +29,10 @@ class db_local{
      bool abrirDB( string path );
      bool cargarusuario(  string namenew, string lastnamenew, string fnnew,string docinew,string usernuevo,string contranew
              );
-     bool cargarpaciente(string np,string appc,float Doc,string fecha,string genero,string raza,string direccion,string nin);
-     bool verificarusuario(usuario &z);
+     bool cargarpaciente(string np,string appc,string Doc,string fecha,string genero,string raza,string direccion,string nin);
+ // bool verificarusuario(usuario &z);
      bool cerrarDB();
 
-        };
+};
 
-        #endif // DB_LOCAL_H
+#endif // DB_LOCAL_H

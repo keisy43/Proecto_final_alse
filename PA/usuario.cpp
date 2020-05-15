@@ -9,12 +9,12 @@
 #include <sstream>
 #include <sqlite3.h>
 
+
 usuario::usuario(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::usuario)
 {
     ui->setupUi(this);
-
 
 }
 
@@ -25,6 +25,7 @@ usuario::~usuario()
 }
 
 
+
 void usuario::on_Ru_clicked()
 {
   // sirve para mostrar la ventana emergente
@@ -33,46 +34,53 @@ void usuario::on_Ru_clicked()
     a.show();
     a.exec();
 }
+
+/**
+ * @brief regu::on_ingresar_clicked.
+ * @details se asignan los datos ingresados en la ventana QDialog a unas variables
+ * con las que se verifica si los valores ingresados estan en la
+ * en la base de datos.
+ */
+
 void usuario::on_ingresar_clicked()
 {
-     usuario  _dato;
-db_local ac;
-  ac.abrirDB("/home/alseuser/superproyecto_alse/PA/_Datos");
+    _abrir=QSqlDatabase::addDatabase("QSQLITE");
+    _abrir.setDatabaseName("/home/alseuser/superproyecto_alse/PA/_Datos");
+    if(_abrir.open()){
+        qDebug()<<"abrio";
+    }
+    else{
+         qDebug()<<"no abrio";
+    }
 
-  _dato.setUser(ui->usuario_2->text().toStdString());
-  _dato.setContra(ui->contrase->text().toStdString());
-  if(ac.verificarusuario( _dato)==false){
+  QSqlQuery buscar;
+  user=ui->usuario_2->text();
+  contra=ui->contrase->text();
+  sql.append("SELECT  * FROM DATOSU WHERE  _USUARIO = '"+ user+"' ");
+  buscar.prepare(sql);
+    if(buscar.exec()){
+      qDebug()<<"consulta realizada";
+
+      while (buscar.next()){
+          contra2=buscar.value(5).toByteArray().constData();
+          qDebug()<<contra2;
+      }
+     }
+      else{
+          qDebug()<<"error de consulta";
+      }
+
+    if(contra2==contra){
+
   menu a(this);
   a.setModal(true);
   a.show();
   a.exec();
-  ac.cerrarDB();
-  }
-  }
 
-
-
-
-
-
-string usuario::getContra() const
-{
-    return contra;
+}
 }
 
-void usuario::setContra(const string &value)
-{
-    contra = value;
-}
 
-string usuario::getUser() const
-{
-    return user;
-}
 
-void usuario::setUser(const string &value)
-{
-    user = value;
-}
 
 

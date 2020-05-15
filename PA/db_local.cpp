@@ -79,35 +79,52 @@ db_local::db_local()
         sqlite3_close( db );
    }
 
-   bool db_local::verificarusuario(usuario &z){
-    char *zErrMsg = 0;
-    int rc;
-
-    std::string sql;
-       sql = "SELECT * FROM DATOSU WHERE ( _USUARIO = '" + z.getUser() +"' "
-            "AND  _CONTRA = '" + z.getContra() + "' );";
-
-    std::cout << sql << std::endl;
-       rc = sqlite3_exec(db, sql.c_str(), agregarusuario,(void*)&z, &zErrMsg);
-
-    if( rc != SQLITE_OK ) {
-       fprintf(stderr, "SQL error: %s\n", zErrMsg);
-       sqlite3_free(zErrMsg);
-    } else {
-       
-       fprintf(stdout, "Operation done successfully\n");
-    }
 
 
-    }
- int db_local::agregarusuario(void *data, int argc, char **argv, char **azColName){
+//   bool db_local::verificarusuario(usuario &z){
+//       char *zErrMsg = 0;
+//       int rc;
+//bool cont =false;
 
- usuario * a = (usuario*) data ;
-   a->setUser(argv[4]);
-   a->setContra(argv[5]);
-   return 0;
 
- }
+//       std::string sql;
+//       sql = "SELECT * FROM DATOSU WHERE ( _USUARIO = '" + z.getUser() +"' "
+//            "AND  _CONTRA = '" + z.getContra() + "' );";
+
+//    std::cout << sql << std::endl;
+//       rc = sqlite3_exec(db, sql.c_str(), agregarusuario,(void*)&z, &zErrMsg);
+
+//       if( &zErrMsg==0){
+//          fprintf(stderr, "SQL error: %s\n", zErrMsg);
+//          sqlite3_free(zErrMsg);
+//           return false;
+//       }
+//       else{
+//           fprintf(stderr, "Opened database successfully\n");
+//       }
+
+
+//     return true;
+//    }
+
+
+
+
+// int db_local::agregarusuario(void *data, int argc, char **argv, char **azColName){
+
+// usuario * a = (usuario*) data ;
+
+//   a->setUser(argv[4]);
+//  a->setContra(argv[5]);
+//if(a->getContra()==" "){
+//     return 1;
+//}
+//else{
+//    return 0;
+
+
+//}
+//}
 
   /**
    * @brief db_local::cargarpaciente
@@ -121,7 +138,7 @@ db_local::db_local()
    * @param nin Es el nuemero de ingresos  del paciente nuevo.
    * @return Un valor boleano que describe si pudieron guardar los datos en la DB o no.
    */
-   bool db_local::cargarpaciente(string np,string appc,float Doc,string fecha,string genero,string raza,string direccion,string nin){
+   bool db_local::cargarpaciente(string np,string appc,string Doc,string fecha,string genero,string raza,string direccion,string nin){
        char *zErrMsg = 0;
        int rc;
        std::stringstream sql;

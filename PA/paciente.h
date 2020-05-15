@@ -5,8 +5,15 @@
 #include <QString>
 #include <string>
 #include "qstring.h"
+#include "db_local.h"
 #include <string>
 #include <QMainWindow>
+#include"QtSql/QSqlDatabase"
+#include"QtSql/QSqlQuery"
+#include"QtSql/qsqlquery.h"
+#include"QtSql/QSqlError"
+
+
 using namespace std;
 namespace Ui {
 class paciente;
@@ -26,8 +33,12 @@ private slots:
 
 private:
     Ui::paciente *ui;
-    string _nombre;
-    int _id;
+
+    QSqlDatabase _abrir;
+    QString doci2;
+    QString sql;
+    QString nombre;
+    QString doci;
 
 
 };

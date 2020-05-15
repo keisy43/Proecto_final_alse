@@ -3,6 +3,10 @@
 #include "qstring.h"
 #include <string>
 #include <QMainWindow>
+#include"QtSql/QSqlDatabase"
+#include"QtSql/QSqlQuery"
+#include"QtSql/qsqlquery.h"
+#include"QtSql/QSqlError"
 using namespace std;
 namespace Ui {
 class usuario;
@@ -17,11 +21,7 @@ public:
     explicit usuario(QWidget *parent = 0);
     ~usuario();
 
-    string getUser() const;
-    void setUser(const string &value);
 
-    string getContra() const;
-    void setContra(const string &value);
 
 private slots:
     void on_Ru_clicked();
@@ -30,9 +30,11 @@ private slots:
 
 private:
     Ui::usuario *ui;
- string user;
-  string contra;
-
+    QSqlDatabase _abrir;
+    QString contra2;
+    QString sql;
+    QString user;
+    QString contra;
 };
 
 #endif // USUARIO_H
