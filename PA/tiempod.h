@@ -12,7 +12,15 @@ class tiempod : public QDialog
     Q_OBJECT
 
 public:
+    /**
+     * EL constructor de la clase.
+     *
+     */
     explicit tiempod(QWidget *parent = 0);
+    /**
+     * EL destructor de la clase.
+     *
+     */
     ~tiempod();
 
 

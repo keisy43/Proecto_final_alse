@@ -19,7 +19,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>MENU</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">

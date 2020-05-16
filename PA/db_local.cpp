@@ -46,6 +46,7 @@ db_local::db_local()
      * @param contranew Es la contraseña del usuario nuevo
      * @return Un valor boleano que describe si pudieron guardar los datos en la DB o no.
      */
+
     bool db_local::cargarusuario(string namenew, string lastnamenew,string fnnew,string docinew,string usernuevo,string contranew)
     {
         char *zErrMsg = 0;
@@ -70,62 +71,37 @@ db_local::db_local()
         }
         return true;
       }
-    /**
-     * @brief db_local::cerrarDB
-     * Esta funcion nos permite cerrar la base de datos.
-     */
-   bool db_local::cerrarDB(){
-
-        sqlite3_close( db );
-   }
-
-
-
-//   bool db_local::verificarusuario(usuario &z){
-//       char *zErrMsg = 0;
-//       int rc;
-//bool cont =false;
-
-
-//       std::string sql;
-//       sql = "SELECT * FROM DATOSU WHERE ( _USUARIO = '" + z.getUser() +"' "
-//            "AND  _CONTRA = '" + z.getContra() + "' );";
-
-//    std::cout << sql << std::endl;
-//       rc = sqlite3_exec(db, sql.c_str(), agregarusuario,(void*)&z, &zErrMsg);
-
-//       if( &zErrMsg==0){
-//          fprintf(stderr, "SQL error: %s\n", zErrMsg);
-//          sqlite3_free(zErrMsg);
-//           return false;
-//       }
-//       else{
-//           fprintf(stderr, "Opened database successfully\n");
-//       }
-
-
-//     return true;
-//    }
 
 
 
 
-// int db_local::agregarusuario(void *data, int argc, char **argv, char **azColName){
+   bool db_local::verificarusuario(usuario &z){
+       char *zErrMsg = 0;
+       int rc;
+       bool cont =false;
+        std::stringstream sql;
+       sql << "SELECT * FROM DATOSU WHERE ( _USUARIO = '" << z.getUser() <<"' "
+            "AND  _CONTRA = '" << z.getContra() << "' );";
 
-// usuario * a = (usuario*) data ;
+   std::cout << sql.str() << std::endl;
+       rc = sqlite3_exec(db, sql.str().c_str() , verfu,(void*)&cont, &zErrMsg);
 
-//   a->setUser(argv[4]);
-//  a->setContra(argv[5]);
-//if(a->getContra()==" "){
-//     return 1;
-//}
-//else{
-//    return 0;
+       if( &zErrMsg==0){
+          fprintf(stderr, "SQL error: %s\n", zErrMsg);
+          sqlite3_free(zErrMsg);
+           return false;
+       }
+       else{
+           fprintf(stderr, "Opened database successfully\n");
+       }
+     return cont;
+    }
+   int db_local::verfu(void *data, int argc, char **argv, char **azColName){
 
-
-//}
-//}
-
+ bool * a = (bool*) data ;
+   *a=true;
+ return 0;
+ }
   /**
    * @brief db_local::cargarpaciente
    * @param np Es el nombre del paciente nuevo.
@@ -161,3 +137,62 @@ db_local::db_local()
        }
         return true;
    }
+   bool db_local::verificarpaciente(paciente &p){
+       char *zErrMsg = 0;
+       int rc;
+       bool cont =false;
+        std::stringstream sql;
+       sql << "SELECT * FROM _DATOSDP WHERE ( _NOMBRE = '" << p.getNombre()<<"' "
+            "AND   _DOCIDENT = '" << p.getDoci() << "' );";
+
+       std::cout << sql.str() << std::endl;
+
+       rc = sqlite3_exec(db, sql.str().c_str() , verfpc,(void*)&cont, &zErrMsg);
+
+       if( &zErrMsg==0){
+          fprintf(stderr, "SQL error: %s\n", zErrMsg);
+          sqlite3_free(zErrMsg);
+           return false;
+       }
+       else{
+           fprintf(stderr, "Opened database successfully\n");
+       }
+     return cont;
+
+   }
+   int db_local::verfpc(void *data, int argc, char **argv, char **azColName){
+       bool * a = (bool*) data ;
+         *a=true;
+       return 0;
+   }
+   bool db_local::cargardatos(string doc,string aciertos,string boton, int min,int seg){
+       char *zErrMsg = 0;
+       int rc;
+       std::stringstream sql;
+
+
+    sql <<"INSERT INTO _ADATOSPRUEBA ( _DOCIDENT,_ACIERTOS , _BOTON,_MINUTO,_SEGUNDO ) VALUES (' ";
+    sql << doc<<"','" << aciertos<<"','"<< boton<<"','";
+    sql << min<<"','"<<seg<<"');";
+       std::cout << sql.str() << std::endl;
+
+       rc = sqlite3_exec(db, sql.str().c_str(),0,0, &zErrMsg);
+
+       if( rc != 0 ){
+          fprintf(stderr, "SQL error: %s\n", zErrMsg);
+          sqlite3_free(zErrMsg);
+           return false;
+       }
+       else{
+           fprintf(stderr, "Opened database successfully\n");
+       }
+       return true;
+   }
+   /**
+    * @brief db_local::cerrarDB
+    * Esta funcion nos permite cerrar la base de datos.
+    */
+  bool db_local::cerrarDB(){
+
+       sqlite3_close( db );
+  }

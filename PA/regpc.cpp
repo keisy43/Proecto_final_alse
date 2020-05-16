@@ -15,7 +15,7 @@ regpc::regpc(QWidget *parent) :
     ui(new Ui::regpc)
 {
     ui->setupUi(this);
-    _bd.abrirDB("/home/alseuser/superproyecto_alse/PA/_Datos");
+    _bd.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
 
 }
 
@@ -35,7 +35,7 @@ void regpc::on_pushButton_clicked()
 
     nombre=ui->nombrep->text().toStdString();
     apellido=ui->apellidop_2->text().toStdString();
-    docident = ui->docidtp->text().toFloat();
+    docident = ui->docidtp->text().toStdString();
     dia= ui->dianac->text().toInt();
     mes= ui->mesnac->text().toInt();
     ano= ui->anionac->text().toInt();

@@ -9,7 +9,12 @@
 #include <sstream>
 #include <sqlite3.h>
 
-
+/**
+ * @brief usuario::usuario
+ * @param parent Es el nombre del usuario nuevo.
+ *
+ * @return Un valor boleano que describe si pudieron guardar los datos en la DB o no.
+ */
 usuario::usuario(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::usuario)
@@ -25,7 +30,10 @@ usuario::~usuario()
 }
 
 
-
+/**
+ * @brief usuario::on_Ru_clicked
+ *
+ */
 void usuario::on_Ru_clicked()
 {
   // sirve para mostrar la ventana emergente
@@ -33,10 +41,12 @@ void usuario::on_Ru_clicked()
     a.setModal( true );
     a.show();
     a.exec();
+     this->hide();
 }
 
 /**
  * @brief regu::on_ingresar_clicked.
+ *
  * @details se asignan los datos ingresados en la ventana QDialog a unas variables
  * con las que se verifica si los valores ingresados estan en la
  * en la base de datos.
@@ -44,40 +54,43 @@ void usuario::on_Ru_clicked()
 
 void usuario::on_ingresar_clicked()
 {
-    _abrir=QSqlDatabase::addDatabase("QSQLITE");
-    _abrir.setDatabaseName("/home/alseuser/superproyecto_alse/PA/_Datos");
-    if(_abrir.open()){
-        qDebug()<<"abrio";
+    usuario a;
+    db_local bd;
+    bd.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
+    a.setUser(ui->usuario_2->text().toStdString());
+    a.setContra(ui->contrase->text().toStdString());
+    if(bd.verificarusuario(a)==true){
+         ui->aviso->setText("Bienvenido");
+        menu a(this);
+         a.show();
+         a.exec();
+
+        this->hide();
     }
     else{
-         qDebug()<<"no abrio";
+        ui->aviso->setText("Contraseña incorrecta");
     }
-
-  QSqlQuery buscar;
-  user=ui->usuario_2->text();
-  contra=ui->contrase->text();
-  sql.append("SELECT  * FROM DATOSU WHERE  _USUARIO = '"+ user+"' ");
-  buscar.prepare(sql);
-    if(buscar.exec()){
-      qDebug()<<"consulta realizada";
-
-      while (buscar.next()){
-          contra2=buscar.value(5).toByteArray().constData();
-          qDebug()<<contra2;
-      }
-     }
-      else{
-          qDebug()<<"error de consulta";
-      }
-
-    if(contra2==contra){
-
-  menu a(this);
-  a.setModal(true);
-  a.show();
-  a.exec();
-
+    bd.cerrarDB();
 }
+
+string usuario::getContra() const
+{
+    return contra;
+}
+
+void usuario::setContra(const string &value)
+{
+    contra = value;
+}
+
+string usuario::getUser() const
+{
+    return user;
+}
+
+void usuario::setUser(const string &value)
+{
+    user = value;
 }
 
 

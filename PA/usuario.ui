@@ -94,6 +94,24 @@
       <string>Registrar usuario</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="aviso">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>160</y>
+       <width>231</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(204, 0, 0);
+border-color: rgb(238, 238, 236);
+background-color: rgb(238, 238, 236);</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">

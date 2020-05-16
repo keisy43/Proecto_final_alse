@@ -1,6 +1,6 @@
 #ifndef DB_LOCAL_H
 #define DB_LOCAL_H
-
+#include "paciente.h"
 #include "usuario.h"
 #include <string>
 #include <sqlite3.h>
@@ -20,8 +20,8 @@ class db_local{
    private:
 
      sqlite3 *db;
-     static int agregarusuario(void *data, int argc, char **argv, char **azColName);
-     static int agregarpaciente(void *data, int argc, char **argv, char **azColName);
+     static int verfu(void *data, int argc, char **argv, char **azColName);
+     static int verfpc(void *data, int argc, char **argv, char **azColName);
 
     public:
 
@@ -30,7 +30,9 @@ class db_local{
      bool cargarusuario(  string namenew, string lastnamenew, string fnnew,string docinew,string usernuevo,string contranew
              );
      bool cargarpaciente(string np,string appc,string Doc,string fecha,string genero,string raza,string direccion,string nin);
- // bool verificarusuario(usuario &z);
+     bool cargardatos(string doc,string aciertos,string boton, int min,int seg);
+     bool verificarusuario(usuario &z);
+     bool verificarpaciente(paciente &p);
      bool cerrarDB();
 
 };

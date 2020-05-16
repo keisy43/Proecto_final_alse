@@ -1,6 +1,7 @@
 #include "paciente.h"
 #include "ui_paciente.h"
-#include "prueba.h"
+#include "tiempod.h"
+#include "db_local.h"
 #include "QDebug"
 #include"QtSql/QSqlDatabase"
 #include"QtSql/QSqlQuery"
@@ -37,34 +38,64 @@ paciente::~paciente()
 
 void paciente::on_pushButton_clicked()
 {
-    QSqlQuery buscara;
+    paciente a;
+    db_local ac;
+    ac.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
+    a.setNombre(ui->nombrep->text().toStdString());
+    a.setDoci(ui->idp->text().toStdString());
+    if(ac.verificarpaciente(a)==true){
+            tiempod a(this);
+              a.show();
+              a.exec();
+
+    }
+    ac.cerrarDB();
+
+//    QSqlQuery buscara;
 
 
-     nombre=ui->nombrep->text();
-    doci=ui->idp->text();
-     qDebug()<<doci;
-     sql.append("SELECT  * FROM _DATOSDP WHERE  _NOMBRE = '"+nombre +"' ");
-     buscara.prepare(sql);
-     if(buscara.exec()){
-         qDebug()<<"consulta realizada";
+//     nombre=ui->nombrep->text();
+//    doci=ui->idp->text();
+//     qDebug()<<doci;
+//     sql.append("SELECT  * FROM _DATOSDP WHERE ( _NOMBRE = '"+nombre +"'); ");
+//      qDebug()<<sql;
+//     buscara.prepare(sql);
+//     if(buscara.exec()){
+//         qDebug()<<"consulta realizada";
 
-        while (buscara.next()){
+//        while (buscara.next()){
 
-          doci2=buscara.value(2).toByteArray().constData();
-          qDebug()<<doci2;
-        }
-      }
-       else{
-          qDebug()<<"error de consulta";
-         }
+//          doci2=buscara.value(2).toByteArray().constData();
+//          qDebug()<<doci2;
+//        }
+//      }
+//       else{
+//          qDebug()<<"error de consulta";
+//         }
 
-     if(doci2==doci){
+//     if(doci2==doci){
 
-     prueba a(this);
-     a.setModal(true);
-     a.show();
-     a.exec();
+//
+//   }
 
-   }
+}
 
+string paciente::getDoci() const
+{
+    return doci;
+}
+
+void paciente::setDoci(const string &value)
+{
+    doci = value;
+}
+
+string paciente::getNombre() const
+{
+    return nombre;
+}
+
+void paciente::setNombre(const string &value)
+{
+    nombre = value;
 }

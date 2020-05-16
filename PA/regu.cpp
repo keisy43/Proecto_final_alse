@@ -15,7 +15,7 @@ regu::regu(QWidget *parent) :
     ui(new Ui::regu)
 {
     ui->setupUi(this);
-    _db.abrirDB("/home/alseuser/superproyecto_alse/PA/_Datos");
+    _db.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
 
 }
 

@@ -24,11 +24,19 @@ class regpc : public QDialog
     Q_OBJECT
 
 public:
+    /**
+     * EL constructor de la clase.
+     *
+     */
     explicit regpc(QWidget *parent = 0);
+    /**
+     * EL destructor de la clase.
+     *
+     */
     ~regpc();
     string nombre;     /*!< es una variable que guarda el nombre del paciente  */
     string apellido;   /*!< es una variable que guarda el apellido del paciente   */
-    float  docident;   /*!< es una variable que guarda el documento de identidad del paciente  */
+   string docident;   /*!< es una variable que guarda el documento de identidad del paciente  */
     string fn;          /*!< es una variable que guarda la fecha de nacimiento  del paciente  */
     string direccion;  /*!< es una variable que guarda la direccion del paciente  */
     string gn;         /*!< es una variable que guarda el genero del paciente  */

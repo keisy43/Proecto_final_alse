@@ -5,6 +5,14 @@
 #include <QTimer>
 #include "tiempod.h"
 
+/**
+ * @brief The QDialog class
+ * Esta clase maneja la conexión con la bases de datos en
+ * SQLite3 para almacenar permanentemente los datos en un archivo.
+ *
+ * @details
+ */
+
 extern int conteo;
 extern double _nota;
 namespace Ui {
@@ -16,7 +24,15 @@ class prueba : public QDialog
     Q_OBJECT
 
 public:
+    /**
+     * EL constructor de la clase.
+     *
+     */
     explicit prueba(QWidget *parent = 0);
+    /**
+     * EL destructor de la clase.
+     *
+     */
     ~prueba();
 
 private slots:
