@@ -11,20 +11,20 @@
 /**
  * @brief docu
  * Es una variable externa tipo entero que se declara de esta
- * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
  */
 extern int docu;
 /**
  * @brief nomb
  * Es una variable externa tipo entero que se declara de esta
- * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
  */
 extern int nomb;
 using namespace std;
 namespace Ui {
 /**
  *@brief paciente
- * Esta clase maneja la verificacion de un paciente en la base de datos.
+ * Esta clase maneja la verificación de un paciente en la base de datos.
  */
 class paciente;
 }

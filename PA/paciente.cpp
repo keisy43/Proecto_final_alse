@@ -8,7 +8,7 @@ int docu;
 int nomb;
 /**
  * @brief paciente::paciente
- * Es la funcion del constructor que controla lo que pasa al abrirse  la ventana.
+ * Es la función del constructor que controla lo que pasa al abrirse  la ventana.
  * @param parent
  */
 paciente::paciente(QWidget *parent) :
@@ -19,7 +19,7 @@ paciente::paciente(QWidget *parent) :
 }
 /**
  * @brief paciente::~paciente
- * Es la funcion del destructor que controla lo que pasa al cerrarse la ventana.
+ * Es la función del destructor que controla lo que pasa al cerrarse la ventana.
  */
 paciente::~paciente()
 {
@@ -28,9 +28,9 @@ paciente::~paciente()
 
 /**
  * @brief paciente::on_pushButton_clicked
- * En esta funcion se asignan los datos ingresados en la ventana QDialog a unas variables
+ * En esta función se asignan los datos ingresados en la ventana QDialog a unas variables
  * con las que se verifica si los valores ingresados estan en la
- * en la base de datos y si es asi se abre la ventana siguiente .
+ * en la base de datos y si es así, se abre la ventana siguiente .
  */
 
 void paciente::on_pushButton_clicked()
@@ -53,9 +53,9 @@ void paciente::on_pushButton_clicked()
 }
 /**
  * @brief paciente::getDoci
- * Es la funcion get de la variable doci que recupera o consigue el valor
- * asignado en la funcion set para ser utilizado despues.
- * @return el valor ingresado en la funcion set.
+ * Es la función get de la variable "doci" que recupera o consigue el valor
+ * asignado en la función set para ser utilizado después.
+ * @return El valor ingresado en la función set.
  */
 string paciente::getDoci() const
 {
@@ -63,9 +63,9 @@ string paciente::getDoci() const
 }
 /**
  * @brief paciente::setDoci
- * Es la funcion set de la variable doci que nos permite darle
+ * Es la función set de la variable "doci" que nos permite darle
  * un valor a esta.
- * @param value es un puntero tipo string.
+ * @param value Es un puntero tipo const string.
  */
 void paciente::setDoci(const string &value)
 {
@@ -74,9 +74,9 @@ void paciente::setDoci(const string &value)
 }
 /**
  * @brief paciente::getNombre
- * Es la funcion get de la variable nombre que recupera o consigue el valor
- * asignado en la funcion set para ser utilizado despues.
- * @return el valor ingresado en la funcion set.
+ * Es la función get de la variable "nombre" que recupera o consigue el valor
+ * asignado en la función set para ser utilizado después.
+ * @return El valor ingresado en la función set.
  */
 
 string paciente::getNombre() const
@@ -85,9 +85,9 @@ string paciente::getNombre() const
 }
 /**
  * @brief paciente::setNombre
- * Es la funcion set de la variable nombre que nos permite darle
+ * Es la función set de la variable "nombre" que nos permite darle
  * un valor a esta.
- * @param value es un puntero tipo string.
+ * @param value Es un puntero tipo const string.
  */
 void paciente::setNombre(const string &value)
 {

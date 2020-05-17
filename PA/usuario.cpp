@@ -11,8 +11,8 @@
 
 /**
  * @brief usuario::usuario
- *Es la funcion del constructor que controla lo que pasa al abrirse  la ventana.
- * @param parent es un puntero tipo QWidget.
+ *Es la función del constructor que controla lo que pasa al abrirse  la ventana.
+ * @param parent Es un puntero tipo QWidget.
  */
 usuario::usuario(QWidget *parent) :
     QMainWindow(parent),
@@ -22,7 +22,7 @@ usuario::usuario(QWidget *parent) :
 }
 /**
  * @brief usuario::~usuario
- * Es la funcion del destructor que controla lo que pasa al cerrarse la ventana.
+ * Es la función del destructor que controla lo que pasa al cerrarse la ventana.
  */
 usuario::~usuario()
 {
@@ -33,15 +33,14 @@ usuario::~usuario()
 
 /**
  * @brief usuario::on_Ru_clicked
- * Esta funcion maneja la conexion con el boton Ru que al hacerle click
- * abrira la ventana con el formulario para registrar a un usuario nuevo.
+ * Esta función maneja la conexión con el botón "Ru" que al hacerle click
+ * abrirá la ventana con el formulario para registrar a un usuario nuevo.
  */
 
 void usuario::on_Ru_clicked()
 {
 
-  // sirve para mostrar la ventana emergente
-   regu a(this);
+    regu a(this);
     a.setModal( true );
     a.show();
     a.exec();
@@ -50,9 +49,9 @@ void usuario::on_Ru_clicked()
 /**
  * @brief regu::on_ingresar_clicked.
  *
- * En esta funcion se asignan los datos ingresados en la ventana QDialog a unas variables
- * con las que se verifica si los valores ingresados estan en la
- * en la base de datos y si es asi se abre la ventana siguiente .
+ * En esta función se asignan los datos ingresados en la ventana QDialog a unas variables
+ * con las que se verifica si los valores ingresados están en la
+ * en la base de datos y si es así, se abre la ventana siguiente .
  */
 
 void usuario::on_ingresar_clicked()
@@ -80,9 +79,9 @@ void usuario::on_ingresar_clicked()
 }
 /*!
  * @brief usuario::getContra()
- * Es la funcion get de la variable doci que recupera o consigue el valor
- * asignado en la funcion set para ser utilizado despues.
- * @return el valor ingresado en la funcion set.
+ * Es la función get de la variable "contra" que recupera o consigue el valor
+ * asignado en la función set para ser utilizado después.
+ * @return El valor ingresado en la función set.
  */
 string usuario::getContra() const
 {
@@ -90,9 +89,9 @@ string usuario::getContra() const
 }
 /**
  * @brief usuario::setContra
- * Es la funcion set de la variable doci que nos permite darle
+ * Es la función set de la variable "contra" que nos permite darle
  * un valor a esta.
- * @param value es un puntero tipo string.
+ * @param value Es un puntero tipo string.
  */
 
 void usuario::setContra(const string &value)
@@ -101,9 +100,9 @@ void usuario::setContra(const string &value)
 }
 /**
  * @brief usuario::getUser
- * Es la funcion get de la variable doci que recupera o consigue el valor
- * asignado en la funcion set para ser utilizado despues.
- * @return el valor ingresado en la funcion set.
+ * Es la función get de la variable "user" que recupera o consigue el valor
+ * asignado en la función set para ser utilizado después.
+ * @return El valor ingresado en la función set.
  */
 string usuario::getUser() const
 {
@@ -111,9 +110,9 @@ string usuario::getUser() const
 }
 /**
  * @brief usuario::setUser
- * Es la funcion set de la variable doci que nos permite darle
+ * Es la función set de la variable "user" que nos permite darle
  * un valor a esta.
- * @param value es un puntero tipo string.
+ * @param value Es un puntero tipo string.
  */
 void usuario::setUser(const string &value)
 {

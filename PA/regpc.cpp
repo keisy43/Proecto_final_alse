@@ -11,8 +11,10 @@
 int edad;
 /**
  * @brief regpc::regpc
- * @param parent
+ * Es la función del constructor que controla lo que pasa al abrirse  la ventana.
+ * @param parent Es un puntero tipo QWidget.
  */
+ 
 regpc::regpc(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::regpc)
@@ -23,6 +25,7 @@ regpc::regpc(QWidget *parent) :
 }
 /**
  * @brief regpc::~regpc
+ *  Es la función del destructor que controla lo que pasa al cerrarse la ventana.
  */
 regpc::~regpc()
 {
@@ -59,7 +62,9 @@ void regpc::on_pushButton_clicked()
 }
 /**
  * @brief regpc::calcularedad
- * Est oyeeeeeeee
+ * Esta función es usada para calcular la edad del paciente, para ello se usa la fecha
+ * de nacimiento y la fecha actual, estas dos en dias, meses y años.
+ * Y retorna la edad del paciente.
  */
 void regpc::calcularedad(){
     cout<<fn<<endl;
@@ -101,12 +106,22 @@ void regpc::calcularedad(){
 
 
 }
+
+/**
+ * @brief regpc::on_generof_clicked
+ * En esta función lo que hacemos es guardar en la variable gn, referente al género de la persona,
+ * mediante un radiobutton, en este caso se guarda el string "Femenino".
+ */
 void regpc::on_generof_clicked()
 {
     gn= ui->generof->text().toStdString();
 }
 
-
+/**
+ * @brief regpc::on_generom_clicked
+ * En esta función lo que hacemos es guardar en la variable gn, referente al género de la persona,
+ * mediante un radiobutton, en este caso se guarda el string "Masculino".
+ */
 void regpc::on_generom_clicked()
 {
     gn= ui->generom->text().toStdString();

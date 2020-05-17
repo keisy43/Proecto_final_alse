@@ -9,7 +9,7 @@
 /**
  * @brief menu::menu
  * Es la función del constructor que controla lo que pasa al abrirse  la ventana.
- * @param parent un puntero tipo QWidget.
+ * @param parent Es un puntero tipo QWidget.
  */
 
 menu::menu(QWidget *parent) :
@@ -22,7 +22,7 @@ menu::menu(QWidget *parent) :
 
 /**
  * @brief menu::~menu
- * Es la funcion del destructor que controla lo que pasa al cerrarse la ventana.
+ * Es la función del destructor que controla lo que pasa al cerrarse la ventana.
  */
 
 menu::~menu()
@@ -31,8 +31,8 @@ menu::~menu()
 }
 /**
  * @brief menu::on_pushButton_clicked
- * Esta funcion es una slot privada que  cierra la ventana al hacer click
- * en el boton pushButton y nos direcciona a la ventana de registrar paciente.
+ * Esta función es una slot privada que cierra la ventana al hacer click
+ * en el botón pushButton y nos direcciona a la ventana de registrar paciente.
  */
 void menu::on_pushButton_clicked()
 {
@@ -48,8 +48,8 @@ void menu::on_pushButton_clicked()
 
 /**
  * @brief menu::on_prueba_clicked
- * Esta funcion es una slot privada que abre la ventana de verificacion de paciente
- * al hacer click en el boton prueba.
+ * Esta función es una slot privada que abre la ventana de verificación de paciente
+ * al hacer click en el botón prueba.
  */
 
 

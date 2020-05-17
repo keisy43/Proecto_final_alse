@@ -38,7 +38,7 @@ public:
      * EL constructor de la clase.
      *
      */
-    explicit usuario(QWidget *parent = 0);
+    explicit usuario(QWidget *parent=0);
     /**
      * EL destructor de la clase.
      *

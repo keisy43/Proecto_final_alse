@@ -15,28 +15,28 @@
 /**
  * @brief conteo
  * Es una variable externa tipo entero que se declara de esta
- * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
  */
 extern int conteo;
 /**
  * @brief _nota
  * Es una variable externa tipo double que se declara de esta
- * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
  */
 extern double _nota;
 /**
  * @brief _estado
  * Es una variable externa tipo entero que se declara de esta
- * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
  * @brief _estado2
  *Es una variable externa tipo entero que se declara de esta
- * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
  */
 extern int _estado, _estado2;
 /**
  * @brief tiempo
  * Es una variable externa tipo entero que se declara de esta
- * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
   */
 extern int tiempo;
 namespace Ui {

@@ -18,7 +18,7 @@ db_local::db_local()
     /**
      * @brief db_local::abrirDB
      * @param path  Es la ubicación absoluta o relativa de la DB.    
-     * @return Un valor boleano que describe si pudo abrir la DB o no.
+     * @return Un valor booleano que describe si se pudo abrir la DB o no.
      */
 
     bool db_local::abrirDB( string path ){
@@ -41,13 +41,13 @@ db_local::db_local()
 
     /**
      * @brief db_local::cargarusuario
-     * @param namenew Es el nombre del usuario nuevo.
-     * @param lastnamenew Es el apellido del usuario nuevo.
+     * @param namenew Es el nombre del usuario nuevo que se desea registrar.
+     * @param lastnamenew Es el apellido del usuario nuevo a registrar.
      * @param fnnew Es la fecha de nacimiento del usuario nuevo.
      * @param docinew Es el documento de identidad  del usuario nuevo.
-     * @param usernew Es el nickname del usuario nuevo
-     * @param contranew Es la contraseña del usuario nuevo
-     * @return Un valor boleano que describe si pudieron guardar los datos en la DB o no.
+     * @param usernew Es el nickname del usuario nuevo.
+     * @param contranew Es la contraseña del usuario nuevo.
+     * @return Un valor booleano que describe si pudieron guardar los datos en la DB o no.
      */
 
     bool db_local::cargarusuario(string namenew, string lastnamenew,string fnnew,string docinew,string usernuevo,string contranew)
@@ -80,8 +80,8 @@ db_local::db_local()
 
     /**
      * @brief db_local::verificarusuario
-     * @param &z Es un puntero de tipo paciente que nos permite retornar los datos ingresados del usuario.
-     *  @return Un valor boleano que describe si los datos ingresados si estan en la DB o no.
+     * @param &z Es un puntero de la clase paciente que nos permite retornar los datos ingresados del usuario.
+     *  @return Un valor booleano que describe si los datos ingresados si están en la DB o no.
      */
 
    bool db_local::verificarusuario(usuario &z){
@@ -109,12 +109,12 @@ db_local::db_local()
    
    /**
        * @fn db_local::verfu
-       * @brief es la funcion llamada para verificar si los datos del usuario estan en la base de datos.
+       * @brief Es la función llamada para verificar si los datos del usuario están en la base de datos, verificando así la existencia del usuario.
        * @param data Es un puntero de tipo void .
-       * @param argv .
-       * @param argc es un puntero tipo entero
+       * @param argv Es una variable de tipo char.
+       * @param argc Es un puntero tipo entero
        * @param azColName
-       *  @return Un valor entero que describe si los datos ingresados si estan en la DB o no.
+       *  @return Un valor entero que describe si los datos ingresados se encuentran en la DB o no.
        */
    
 int db_local::verfu(void *data, int argc, char **argv, char **azColName){
@@ -128,13 +128,13 @@ int db_local::verfu(void *data, int argc, char **argv, char **azColName){
    * @brief db_local::cargarpaciente
    * @param np Es el nombre del paciente nuevo.
    * @param appc Es el apellido del paciente nuevo.
-   * @param fecha Es la fecha de nacimiento del pciente nuevo.
+   * @param fecha Es la fecha de nacimiento del paciente nuevo.
    * @param Doc Es el documento de identidad  del paciente nuevo.
-   * @param genero Es el genero del paciente nuevo.
+   * @param genero Es el género del paciente nuevo.
    * @param raza Es la raza del paciente nuevo.
-   * @param direccion Es la direccion del paciente nuevo.
-   * @param nin Es el nuemero de ingresos  del paciente nuevo.
-   * @return Un valor boleano que describe si pudieron guardar los datos en la DB o no.
+   * @param direccion Es la dirección del paciente nuevo.
+   * @param nin Es el nivel de ingresos  del paciente nuevo.
+   * @return Un valor booleano que describe si pudieron guardar los datos en la DB o no.
    */
 
    bool db_local::cargarpaciente(string np,string appc,string Doc,string fecha,string genero,string raza,string direccion,string nin){
@@ -164,8 +164,8 @@ int db_local::verfu(void *data, int argc, char **argv, char **azColName){
    
    /**
     * @brief db_local::verificarpaciente
-    * @param &p Es un puntero de tipo paciente que nos permite retornar los datos ingresados del paciente.
-    *  @return Un valor boleano que describe si los datos ingresados si estan en la DB o no.
+    * @param &p Es un puntero de la clase paciente que nos permite retornar los datos ingresados del paciente.
+    *  @return Un valor booleano que describe si los datos ingresados están en la DB o no.
     */
    
    bool db_local::verificarpaciente(paciente &p){
@@ -196,12 +196,12 @@ int db_local::verfu(void *data, int argc, char **argv, char **azColName){
    
    /**
     * @fn db_local::verfpc
-    * @brief Es la funcion llamada para verificar si los datos del paciente estan en la base de datos.
+    * @brief Es la funcion llamada para verificar si los datos del paciente están en la base de datos.
     * @param data Es un puntero de tipo void .
-    * @param argv .
-    * @param argc es un puntero tipo entero
+    * @param argv Es una variable tipo char.
+    * @param argc Es un puntero tipo entero.
     * @param azColName
-    *  @return Un valor entero que describe si los datos ingresados si estan en la DB o no.
+    *  @return Un valor entero que describe si los datos ingresados están en la DB o no.
     */
    
    int db_local::verfpc(void *data, int argc, char **argv, char **azColName){
@@ -212,10 +212,10 @@ int db_local::verfu(void *data, int argc, char **argv, char **azColName){
    
    /**
     * @brief db_local::cargardatos
-    * @param docu Es el numero de documento del paciente que va a realizar la prueba.
-    * @param conteo Es el numero de aciertos que obtuvo el paciente en la prueba.
-    * @param _estado2 Es el que indica que boton esta prendido.
-    * @param tiempo Es lo que indica el tiempo que lleva transcurrido de la prueba.
+    * @param docu Es el número de documento del paciente que va a realizar la prueba.
+    * @param conteo Es el número de aciertos que obtuvo el paciente en la prueba.
+    * @param _estado2 Es el que indica el botón que se encuentra prendido.
+    * @param tiempo Indica el tiempo que lleva transcurrido de la prueba.
     * @return Un valor boleano que describe si pudieron guardar los datos en la DB o no.
     */
    
@@ -246,7 +246,7 @@ int db_local::verfu(void *data, int argc, char **argv, char **azColName){
 
    /**
     * @brief db_local::cerrarDB
-    * Esta funcion nos permite cerrar la base de datos.
+    * Esta función nos permite cerrar la base de datos.
     */
 
   bool db_local::cerrarDB(){

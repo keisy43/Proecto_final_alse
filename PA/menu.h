@@ -6,7 +6,7 @@
 namespace Ui {
 /**
  *@brief La clase menu
- * Esta clase maneja la conexion con la ventana de dialogo que nos permite elegir
+ * Esta clase maneja la conexión con la ventana de diálogo que nos permite elegir
  * entre ingresar un paciente para hacerle la prueba de agilidad o
  * registrar uno nuevo.
  */

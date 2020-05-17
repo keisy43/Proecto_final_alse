@@ -49,8 +49,8 @@ void tiempod::on_buttonBox_accepted()
 }
 /**
  * @brief tiempod::on_buttonBox_rejected
- * En esta funcion se define lo que ocurrira en caso de hacer click en el boton de cancel en esta 
- * ocacion la ventana se cerrara y regresara a la ventana anterior. 
+ * En esta función definimos lo ocurrido al dar click en el botón de "cancel", en esta
+ * ocasión la ventana se cerrará y regresará a la ventana anterior.
  */
 void tiempod::on_buttonBox_rejected()
 {

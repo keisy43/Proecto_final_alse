@@ -9,7 +9,11 @@
 
 int edadus;
 using namespace std;
-
+/**
+ * @brief regu::regu
+ * Es la función del constructor que controla lo que pasa al abrirse  la ventana.
+ * @param parent Es un puntero tipo QWidget.
+ */
 regu::regu(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::regu)
@@ -18,7 +22,10 @@ regu::regu(QWidget *parent) :
     _db.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
 
 }
-
+/**
+ * @brief regu::~regu
+ * Es la función del destructor que controla lo que pasa al cerrarse la ventana.
+ */
 regu::~regu()
 {
     delete ui;
@@ -27,8 +34,8 @@ regu::~regu()
 
 /**
  * @brief regu::on_buttonBox_accepted
- * @details se asignan los datos ingresados en la ventana QDialog a unas variables
- * que se le pasan por referencia a la funcion cargarusuario para que guarde los valores
+ * @details Se asignan los datos ingresados en la ventana QDialog, referentes al usuario, a unas variables
+ * que se le pasan por referencia a la función cargarusuario para que guarde los valores
  * en la base de datos.
  */
 void regu::on_buttonBox_accepted()
@@ -49,9 +56,15 @@ void regu::on_buttonBox_accepted()
    _db.cerrarDB();
 }
 
+/**
+ * @brief regu::calcularedad
+ * Esta función es usada para calcular la edad del usuario, para ello se usa la fecha
+ * de nacimiento y la fecha actual, estas dos en dias, meses y años.
+ * Y retorna la edad del usuario.
+ */
+
 void regu::calcularedad(){
     cout<<fn<<endl;
-    diasnaci=(ano*365)+(mes*30)+dia;
     time_t t = time(NULL);
     tm* timePtr = localtime(&t);
 
@@ -85,7 +98,3 @@ void regu::calcularedad(){
     cout<<edadus<<endl;
 
 }
-
-
-
-

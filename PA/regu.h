@@ -5,13 +5,19 @@
 #include"db_local.h"
 #include "qstring.h"
 #include <string>
+/**
+ * @brief edadus
+ * Es una variable externa tipo entero que se declara de esta
+ * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+
+ */
+extern int edadus;
+namespace Ui {
 /*!
  * @brief The QDialog class
  * @details Esta clase denominada regu maneja la conexión con la ventana de dialogo donde
  * se registran los datos de un usuario nuevo.
  */
-extern int edadus;
-namespace Ui {
 class regu;
 }
 
@@ -31,25 +37,23 @@ public:
      */
     ~regu();
 
-    string user;       /*!< es una variable que guarda el nickname del usuario   */
-    string contra;     /*!<  es una variable que guarda la contraseña del usuario   */
-    string name;       /*!< es una variable que guarda el nombre del usuario   */
-    string lastname;   /*!< es una variable que guarda el apellido del usuario   */
-    string fn;         /*!< es una variable que guarda la fecha de nacimiento  del usuario   */
-    string doci;       /*!< es una variable que guarda el documento de identidad del usuario   */
-    int ano;           /*!< es una variable que guarda el nickname del usuario   */
-    int mes;           /*!< es una variable que guarda el nickname del usuario   */
-    int dia;           /*!< es una variable que guarda el nickname del usuario   */
-    int anioac;        /*!< es una variable que guarda el nickname del usuario   */
-    int mesac;         /*!< es una variable que guarda el nickname del usuario   */
-    int diaac;         /*!< es una variable que guarda el nickname del usuario   */
-    int diasnaci;      /*!< es una variable que guarda el nickname del usuario   */
-    int diasact;       /*!< es una variable que guarda el nickname del usuario   */
-    int edaddias;      /*!< es una variable que guarda el nickname del usuario   */
-    int diaactual;     /*!< es una variable que guarda el nickname del usuario   */
-    int mesactual;     /*!< es una variable que guarda el nickname del usuario   */
-    int anioactual;    /*!< es una variable que guarda el nickname del usuario   */
-    int aniomenos;
+    string user;       /*!< Es una variable que guarda el nickname del usuario.   */
+    string contra;     /*!<  Es una variable que guarda la contraseña del usuario.   */
+    string name;       /*!< Es una variable que guarda el nombre del usuario.   */
+    string lastname;   /*!< Es una variable que guarda el apellido del usuario.   */
+    string fn;         /*!< Es una variable que guarda la fecha de nacimiento  del usuario, almacenando los dias, el mes y el año, ingresados.  */
+    string doci;       /*!< Es una variable que guarda el documento de identidad del usuario.   */
+    
+    int ano;           /*!< Es una variable que guarda el año de nacimiento del paciente que fue ingresado. */
+    int mes;           /*!< Es una variable que guarda el mes de nacimiento del paciente.  */
+    int dia;           /*!< Es una variable que guarda el dia de nacimiento  del paciente.  */
+    int anioac;        /*!< Es una variable que guarda el año actual dado por el sistema .  */
+    int mesac;         /*!< Es una variable que guarda el mes actual dado por el sistema.   */
+    int diaac;         /*!< Es una variable que guarda el dia actual dado por el sistema.   */
+    int diaactual;     /*!< Es una variable que almacena el valor real del dia actual arrojado por el sistema. */
+    int mesactual;     /*!< Es una variable que almacena el valor real del mes actual arrojado por el sistema. */
+    int anioactual;    /*!< Es una variable que almacena el valor real del año actual arrojado por el sistema. */
+    int aniomenos;     /*!< En esta variable se almacena el valor del año de nacimiento ingresado por el paciente y le suma uno para futuros calculos */
 
 private slots:
 
@@ -58,6 +62,10 @@ private slots:
 
 private:
     Ui::regu *ui;
+    /**
+   * @brief _db
+   * Se trata de una varible de la clase db_local que usamos para realizar varias operaciones relacionadas con la base de datos.
+   */
     db_local _db;
 
 

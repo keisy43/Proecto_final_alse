@@ -7,7 +7,7 @@
 namespace Ui {
 /**
  * @class aciertos
- * @brief Esta clase maneja la conexion con la ventana de dialogo que
+ * @brief Esta clase maneja la conexión con la ventana de diálogo que
  * nos muestra los aciertos que tuvo el paciente en la prueba .
  *
  * @details

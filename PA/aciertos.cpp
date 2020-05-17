@@ -5,7 +5,7 @@
 
 /**
  * @brief aciertos::aciertos
- * Es la funcion del constructor que controla lo que pasa al abrirse  la ventana.
+ * Es la función del constructor de la clase aciertos, en este controlamos lo que pasa al abrirse  la ventana.
  * @param parent es un puntero de tipo QWidget.
  *
  */
@@ -31,7 +31,7 @@ aciertos::aciertos(QWidget *parent) :
 }
 /**
  * @brief aciertos::~aciertos
- * Es la funcion del destructor que controla lo que pasa al cerrarse la ventana.
+ * Es la función del destructor que controla lo que pasa al cerrarse la ventana.
  */
 aciertos::~aciertos()
 {
@@ -40,8 +40,8 @@ aciertos::~aciertos()
 
 /**
  * @brief aciertos::on_volvermenu_clicked
- * Esta funcion es una slot privada que cierra la ventana y nos
- * devuelve al menu.
+ * Esta función es una slot privada que cierra la ventana y nos
+ * devuelve a la venta de menu..
  */
 
 
@@ -56,8 +56,8 @@ void aciertos::on_volvermenu_clicked()
 
 /**
  * @brief aciertos::on_pushButton_2_clicked
- * Esta funcion es un slot privado que cierra la ventana
- * al hacer clik en el boton de salir.
+ * Esta función es un slot privado que cierra la ventana
+ * al hacer click en el botón de salir, cerrando así, el programa.
  */
 void aciertos::on_pushButton_2_clicked()
 {

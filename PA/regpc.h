@@ -9,7 +9,7 @@
 /**
  * @brief edad
  * Es una variable externa tipo entero que se declara de esta
- * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
  */
 extern int edad;
 
@@ -58,7 +58,7 @@ public:
     int diaactual;     /*!< Es una variable que almacena el valor real del dia actual arrojado por el sistema. */
     int mesactual;     /*!< Es una variable que almacena el valor real del mes actual arrojado por el sistema. */
     int anioactual;    /*!< Es una variable que almacena el valor real del año actual arrojado por el sistema. */
-    int aniomenos;     /*!< En esta variable se almacena el valor del año de nacimiento ingresado por el paciente y le suma uno para futuros calculos */
+    int aniomenos;     /*!< En esta variable se almacena el valor del año de nacimiento ingresado por el paciente y le suma uno para futuros cálculos */
 
 private slots:
     void calcularedad();
