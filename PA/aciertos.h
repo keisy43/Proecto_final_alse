@@ -3,15 +3,15 @@
 #include "prueba.h"
 #include <QDialog>
 
+
+namespace Ui {
 /**
- * @brief The QDialog class
- * Esta clase maneja la conexión con la bases de datos en
- * SQLite3 para almacenar permanentemente los datos en un archivo.
+ * @class aciertos
+ * @brief Esta clase maneja la conexion con la ventana de dialogo que
+ * nos muestra los aciertos que tuvo el paciente en la prueba .
  *
  * @details
  */
-
-namespace Ui {
 class aciertos;
 }
 
@@ -34,7 +34,9 @@ public:
 
 private slots:
 
+    void on_volvermenu_clicked();
 
+    void on_pushButton_2_clicked();
 
 private:
     Ui::aciertos *ui;

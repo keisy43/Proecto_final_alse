@@ -5,23 +5,27 @@
 #include <QString>
 #include <string>
 #include "qstring.h"
-
 #include <string>
 #include <QMainWindow>
-#include"QtSql/QSqlDatabase"
-#include"QtSql/QSqlQuery"
-#include"QtSql/qsqlquery.h"
-#include"QtSql/QSqlError"
-/**
- * @brief The QDialog class
- * Esta clase maneja la conexión con la bases de datos en
- * SQLite3 para almacenar permanentemente los datos en un archivo.
- *
- * @details
- */
 
+/**
+ * @brief docu
+ * Es una variable externa tipo entero que se declara de esta
+ * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ */
+extern int docu;
+/**
+ * @brief nomb
+ * Es una variable externa tipo entero que se declara de esta
+ * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ */
+extern int nomb;
 using namespace std;
 namespace Ui {
+/**
+ *@brief paciente
+ * Esta clase maneja la verificacion de un paciente en la base de datos.
+ */
 class paciente;
 }
 
@@ -49,15 +53,29 @@ public:
     void setDoci(const string &value);
 
 private slots:
+    /**
+     * @brief on_pushButton_clicked
+     *
+     */
     void on_pushButton_clicked();
 
 private:
     Ui::paciente *ui;
 
-//    QSqlDatabase _abrir;
-//    QString doci2;
-//    QString sql;
+    /**
+     * @brief nombre
+     * Es un atributo privado de la clase que sera utilizado
+     * para guardar el nombre ingresado.
+     */
+
     string nombre;
+
+    /**
+     * @brief doci
+     * Es un atributo privado de la clase que sera utilizado para
+     * guardar el documento de identidad ingresado.
+     */
+
     string doci;
 
 

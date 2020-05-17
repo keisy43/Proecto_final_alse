@@ -4,18 +4,46 @@
 #include <QDialog>
 #include <QTimer>
 #include "tiempod.h"
+#include <string>
+#include <sqlite3.h>
+#include <vector>
+#include "qstring.h"
+#include "db_local.h"
+
+
 
 /**
- * @brief The QDialog class
- * Esta clase maneja la conexión con la bases de datos en
- * SQLite3 para almacenar permanentemente los datos en un archivo.
- *
- * @details
+ * @brief conteo
+ * Es una variable externa tipo entero que se declara de esta
+ * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
  */
-
 extern int conteo;
+/**
+ * @brief _nota
+ * Es una variable externa tipo double que se declara de esta
+ * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ */
 extern double _nota;
+/**
+ * @brief _estado
+ * Es una variable externa tipo entero que se declara de esta
+ * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ * @brief _estado2
+ *Es una variable externa tipo entero que se declara de esta
+ * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+ */
+extern int _estado, _estado2;
+/**
+ * @brief tiempo
+ * Es una variable externa tipo entero que se declara de esta
+ * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
+  */
+extern int tiempo;
 namespace Ui {
+/**
+ *@brief prueba
+ * Esta clase maneja la ventana de la prueba de agilidad para el paciente.
+ */
 class prueba;
 }
 
@@ -37,6 +65,7 @@ public:
 
 private slots:
     void cambio_estado(void );
+    void insertar();
     void on_boton1_clicked();
     void on_boton2_clicked();
     void on_boton3_clicked();
@@ -55,13 +84,19 @@ private slots:
 
 private:
     Ui::prueba *ui;
+    /**
+     * @brief _timer
+     * Es un puntero tipo Qtimer.
+     */
     QTimer  *_timer;
-    char _estado;
-    char _estado2;
+    /**
+     * @brief rd
+     * Es un punteroo tipo QPixmap.
+     * @brief rl
+     * Es un punteroo tipo QPixmap.
+     */
+    QPixmap *rd, *rl;
 
-    int tiempo=0;
-
-      QPixmap *rd, *rl;
 };
 
 #endif // PRUEBA_H

@@ -3,17 +3,31 @@
 #include "aciertos.h"
 #include "tiempod.h"
 #include <QTimer>
+#include <string>
+#include "paciente.h"
 
 int conteo=0;
 double _nota=0.;
 int _duracion;
-
+int _estado;
+int _estado2;
+int tiempo=0;
+/**
+ * @brief prueba::prueba
+ * Es la funcion del constructor que controla lo que pasa al abrirse  la ventana.
+ * @param parent es un puntero tipo QWidget.
+ */
 prueba::prueba(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::prueba)
 {
     ui->setupUi(this);
     _timer = new QTimer(this);
+    db_local _db;
+    _db.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
+    _db.cargardatos( docu, conteo ,_estado2,tiempo);
+    _db.cerrarDB();
+
     // Primero configuro los leds para que arranque en el estado 1
     // Estados :
     // 1- Prende boton 1
@@ -55,6 +69,7 @@ prueba::prueba(QWidget *parent) :
     ui->cont->setText(QString::number(conteo));
     ui->cont_2->setText(QString::number(tiempo));
 
+
     connect(_timer, &QTimer::timeout, this, &prueba::cambio_estado );
     _timer->setInterval( 2000 );
     _timer->start();
@@ -62,19 +77,25 @@ prueba::prueba(QWidget *parent) :
 }
 
 
-
+/**
+ * @brief prueba::~prueba
+ * Es la funcion del destructor que controla lo que pasa al cerrarse la ventana.
+ */
 prueba::~prueba()
 {
     delete ui;
 }
 
+/**
+ * @brief prueba::cambio_estado
+ * Esta funcion nos permite hacer que los leds se enciendan al cambiar los estados de una manera aleatoria.
+ */
 
 void prueba::cambio_estado(void){
     if(tiempo<=(_duracion-1)){
         switch ( _estado ) {
         case 1:
             _estado2=1;
-            _estado= rand()%10 +1;
             tiempo+=1;
             ui->cont_2->setText(QString::number (tiempo));
             ui->boton1->setIcon(*rl );
@@ -88,14 +109,15 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rd );
             ui->boton10->setIcon(*rd );
             ui->boton11->setIcon(*rd );
+            insertar();
 
-
+            _estado= rand()%10 +1;
             _timer->setInterval( 1000 );
             _timer->start();
             break;
         case 2:
             _estado2 = 2;
-            _estado= rand()%10 +1;
+
             tiempo+=1;
             ui->cont_2->setText(QString::number (tiempo));
             ui->boton1->setIcon(*rd );
@@ -109,9 +131,12 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rd );
             ui->boton10->setIcon(*rd );
             ui->boton11->setIcon(*rd );
+            insertar();
+            _estado= rand()%10 +1;
             _timer->setInterval( 1000 );
             _timer->start();
             break;
+
         case 3:
             _estado2 = 3;
             _estado= rand()%10 +1;
@@ -128,6 +153,7 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rd );
             ui->boton10->setIcon(*rd );
             ui->boton11->setIcon(*rd);
+            insertar();
             _timer->setInterval( 1000 );
             _timer->start();
             break;
@@ -147,8 +173,7 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rd );
             ui->boton10->setIcon(*rd );
             ui->boton11->setIcon(*rd );
-
-
+            insertar();
             _timer->setInterval( 1000 );
             _timer->start();
             break;
@@ -168,6 +193,7 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rd );
             ui->boton10->setIcon(*rd );
             ui->boton11->setIcon(*rd );
+            insertar();
             _timer->setInterval( 1000 );
             _timer->start();
 
@@ -188,6 +214,7 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rd );
             ui->boton10->setIcon(*rd );
             ui->boton11->setIcon(*rd );
+            insertar();
             _timer->setInterval( 1000 );
             _timer->start();
 
@@ -209,6 +236,7 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rd );
             ui->boton10->setIcon(*rd );
             ui->boton11->setIcon(*rd );
+            insertar();
 
             _timer->setInterval( 1000 );
             _timer->start();
@@ -230,6 +258,7 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rd );
             ui->boton10->setIcon(*rd );
             ui->boton11->setIcon(*rd );
+            insertar();
 
 
             _timer->setInterval( 1000 );
@@ -253,6 +282,7 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rl );
             ui->boton10->setIcon(*rd );
             ui->boton11->setIcon(*rd );
+            insertar();
 
 
             _timer->setInterval( 1000 );
@@ -276,6 +306,7 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rd );
             ui->boton10->setIcon(*rl );
             ui->boton11->setIcon(*rd );
+            insertar();
 
             _timer->setInterval( 1000 );
             _timer->start();
@@ -298,6 +329,7 @@ void prueba::cambio_estado(void){
             ui->boton9->setIcon(*rd );
             ui->boton10->setIcon(*rd );
             ui->boton11->setIcon(*rl );
+            insertar();
             _timer->setInterval( 1000 );
             _timer->start();
 
@@ -307,11 +339,10 @@ void prueba::cambio_estado(void){
 
         default:
             break;
+         }
 
+        }else{
 
-        }
-    }else{
-        _estado=20;
         ui->boton1->setIcon(*rd );
         ui->boton2->setIcon(*rd );
         ui->boton3->setIcon( *rd );
@@ -324,98 +355,154 @@ void prueba::cambio_estado(void){
         ui->boton10->setIcon(*rd );
         ui->boton11->setIcon(*rd );
         resultados();
+
+
     }
 
-}
 
 
+
+
+ }
+
+/**
+ * @brief prueba::on_boton1_clicked
+ * Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 1.
+ */
 
 void prueba::on_boton1_clicked()
 {
+
     if(_estado2 == 1){
         conteo+=1;
         ui->cont->setText(QString::number (conteo));
-        cambio_estado();
-
     }
 }
+
+/**
+ * @brief prueba::on_boton2_clicked
+ * Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 2.
+ */
 
 void prueba::on_boton2_clicked()
 {
     if(_estado2 == 2){
         conteo+=1;
         ui->cont->setText(QString::number(conteo));
-        cambio_estado();
     }
 }
-
+/**
+ * @brief prueba::on_boton3_clicked
+ * Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 3.
+ */
 void prueba::on_boton3_clicked()
 {
     if(_estado2 == 3){
         conteo+=1;
         ui->cont->setText(QString::number(conteo));
-        cambio_estado();
     }
-};
 
+}
+/**
+ * @brief prueba::on_boton4_clicked
+ *Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 4.
+ */
 void prueba::on_boton4_clicked()
 {
     if(_estado2 == 4){
         conteo+=1;
         ui->cont->setText(QString::number(conteo));
-        cambio_estado();
-    }
-}
 
+    }
+
+}
+/**
+ * @brief prueba::on_boton5_clicked
+ * Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 5.
+ */
 void prueba::on_boton5_clicked()
 {
     if(_estado2 == 5){
         conteo+=1;
         ui->cont->setText(QString::number(conteo));
-        cambio_estado();
 
     }
+
 }
+
+/**
+ * @brief prueba::on_boton6_clicked
+ * Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 6.
+ */
 
 void prueba::on_boton6_clicked()
 {
     if(_estado2 == 6){
         conteo+=1;
         ui->cont->setText(QString::number(conteo));
-        cambio_estado();
 
     }
-}
+   }
+/**
+ * @brief prueba::on_boton7_clicked
+ * Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 7.
+ */
 
 void prueba::on_boton7_clicked()
 {
     if(_estado2 == 7){
         conteo+=1;
         ui->cont->setText(QString::number(conteo));
-        cambio_estado();
 
     }
-}
 
+
+}
+/**
+ * @brief prueba::on_boton8_clicked
+ * Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 8.
+ */
 void prueba::on_boton8_clicked()
 {
 
     if(_estado2 == 8){
         conteo+=1;
         ui->cont->setText(QString::number(conteo));
-        cambio_estado();
 
     }
+
 }
+
+/**
+ * @brief prueba::on_boton9_clicked
+ * Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 9.
+ */
 
 void prueba::on_boton9_clicked()
 {
     if(_estado2 == 9){
         conteo+=1;
         ui->cont->setText(QString::number(conteo));
-        cambio_estado();
+
     }
+
 }
+
+/**
+ * @brief prueba::on_boton10_clicked
+ * Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 10.
+ */
+
 
 void prueba::on_boton10_clicked()
 {
@@ -423,9 +510,16 @@ void prueba::on_boton10_clicked()
     if(_estado2 == 10){
         conteo+=1;
         ui->cont->setText(QString::number(conteo));
-        cambio_estado();
+
     }
+
 }
+
+/**
+ * @brief prueba::on_boton11_clicked
+ *  * Es ta funcion nos permite comparar si el boton que esta pulsando el paciente es igual al boton que esta prendido
+ * y en caso de ser asi aumenta el contador de los aciertos , al hacer click en el boton 11.
+ */
 
 void prueba::on_boton11_clicked()
 {
@@ -433,18 +527,41 @@ void prueba::on_boton11_clicked()
     if(_estado2 == 11){
         conteo= conteo+1;
         ui->cont->setText(QString::number(conteo));
-        cambio_estado();
+
     }
 
 }
+
+/**
+ * @brief prueba::insertar
+ * Esta funcion inserta los datos obtenidos en la prueba en
+ * la base de datos.
+ */
+
+void prueba::insertar(){
+    db_local _db;
+    _db.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
+    _db.cargardatos( docu, conteo ,_estado2,tiempo);
+    _db.cerrarDB();
+
+}
+
+/**
+ * @brief prueba::resultados
+ * Esta funcion nos muestra los resultados obtenidos
+ * en la prueba como los aciertos y la nota.
+ *
+ */
+
 void prueba::resultados(){
+    this->close();
     double c=5.0;
     _nota=(c/ (double(_duracion)))*conteo;
     aciertos a(this);
     a.setModal(true);
-
      a.show();
      a.exec();
+     this->close();
 
 }
 

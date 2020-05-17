@@ -4,6 +4,12 @@
 #include <QDialog>
 
 namespace Ui {
+/**
+ *@brief La clase menu
+ * Esta clase maneja la conexion con la ventana de dialogo que nos permite elegir
+ * entre ingresar un paciente para hacerle la prueba de agilidad o
+ * registrar uno nuevo.
+ */
 class menu;
 }
 
@@ -12,7 +18,15 @@ class menu : public QDialog
     Q_OBJECT
 
 public:
+    /**
+     * EL constructor de la clase.
+     *
+     */
     explicit menu(QWidget *parent = 0);
+    /**
+     * EL destructor de la clase.
+     *
+     */
     ~menu();
 
 private slots:

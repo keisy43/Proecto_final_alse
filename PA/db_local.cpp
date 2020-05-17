@@ -1,4 +1,4 @@
-#include "db_local.h"
+
 #include "usuario.h"
 #include <iostream>
 #include <sstream>
@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <string>
 #include "QDebug"
+#include "prueba.h"
+#include "paciente.h"
 
 using namespace std;
 db_local::db_local()
@@ -32,8 +34,9 @@ db_local::db_local()
         }
         else{
             fprintf(stderr, "Opened database successfully\n");
+            return true;
         }
-        return true;
+        cerrarDB();
     }
 
     /**
@@ -68,12 +71,18 @@ db_local::db_local()
         }
         else{
             fprintf(stderr, "Opened database successfully\n");
+            return true;
         }
-        return true;
+
+
       }
 
 
-
+    /**
+     * @brief db_local::verificarusuario
+     * @param &z Es un puntero de tipo paciente que nos permite retornar los datos ingresados del usuario.
+     *  @return Un valor boleano que describe si los datos ingresados si estan en la DB o no.
+     */
 
    bool db_local::verificarusuario(usuario &z){
        char *zErrMsg = 0;
@@ -94,15 +103,28 @@ db_local::db_local()
        else{
            fprintf(stderr, "Opened database successfully\n");
        }
+       sqlite3_close(db);
      return cont;
     }
-   int db_local::verfu(void *data, int argc, char **argv, char **azColName){
+   
+   /**
+       * @fn db_local::verfu
+       * @brief es la funcion llamada para verificar si los datos del usuario estan en la base de datos.
+       * @param data Es un puntero de tipo void .
+       * @param argv .
+       * @param argc es un puntero tipo entero
+       * @param azColName
+       *  @return Un valor entero que describe si los datos ingresados si estan en la DB o no.
+       */
+   
+int db_local::verfu(void *data, int argc, char **argv, char **azColName){
 
- bool * a = (bool*) data ;
-   *a=true;
- return 0;
+    bool * a = (bool*) data ;
+    *a=true;
+    return 0;
  }
-  /**
+  
+/**
    * @brief db_local::cargarpaciente
    * @param np Es el nombre del paciente nuevo.
    * @param appc Es el apellido del paciente nuevo.
@@ -114,6 +136,7 @@ db_local::db_local()
    * @param nin Es el nuemero de ingresos  del paciente nuevo.
    * @return Un valor boleano que describe si pudieron guardar los datos en la DB o no.
    */
+
    bool db_local::cargarpaciente(string np,string appc,string Doc,string fecha,string genero,string raza,string direccion,string nin){
        char *zErrMsg = 0;
        int rc;
@@ -136,7 +159,15 @@ db_local::db_local()
           fprintf(stdout, "Records created successfully\n");      
        }
         return true;
+        sqlite3_close(db);
    }
+   
+   /**
+    * @brief db_local::verificarpaciente
+    * @param &p Es un puntero de tipo paciente que nos permite retornar los datos ingresados del paciente.
+    *  @return Un valor boleano que describe si los datos ingresados si estan en la DB o no.
+    */
+   
    bool db_local::verificarpaciente(paciente &p){
        char *zErrMsg = 0;
        int rc;
@@ -155,25 +186,48 @@ db_local::db_local()
            return false;
        }
        else{
-           fprintf(stderr, "Opened database successfully\n");
+           fprintf(stderr, "Opened1 database successfully\n");
+           return true;
        }
+       sqlite3_close(db);
      return cont;
 
    }
+   
+   /**
+    * @fn db_local::verfpc
+    * @brief Es la funcion llamada para verificar si los datos del paciente estan en la base de datos.
+    * @param data Es un puntero de tipo void .
+    * @param argv .
+    * @param argc es un puntero tipo entero
+    * @param azColName
+    *  @return Un valor entero que describe si los datos ingresados si estan en la DB o no.
+    */
+   
    int db_local::verfpc(void *data, int argc, char **argv, char **azColName){
        bool * a = (bool*) data ;
          *a=true;
        return 0;
    }
-   bool db_local::cargardatos(string doc,string aciertos,string boton, int min,int seg){
+   
+   /**
+    * @brief db_local::cargardatos
+    * @param docu Es el numero de documento del paciente que va a realizar la prueba.
+    * @param conteo Es el numero de aciertos que obtuvo el paciente en la prueba.
+    * @param _estado2 Es el que indica que boton esta prendido.
+    * @param tiempo Es lo que indica el tiempo que lleva transcurrido de la prueba.
+    * @return Un valor boleano que describe si pudieron guardar los datos en la DB o no.
+    */
+   
+   bool db_local::cargardatos(int docu, int conteo, int _estado2, int tiempo){
        char *zErrMsg = 0;
        int rc;
        std::stringstream sql;
 
 
-    sql <<"INSERT INTO _ADATOSPRUEBA ( _DOCIDENT,_ACIERTOS , _BOTON,_MINUTO,_SEGUNDO ) VALUES (' ";
-    sql << doc<<"','" << aciertos<<"','"<< boton<<"','";
-    sql << min<<"','"<<seg<<"');";
+    sql <<"INSERT INTO _DATOSPRUEBA ( _DOCIDENT,_ACIERTOS , _BOTON,_SEGUNDO ) VALUES (' ";
+    sql << docu<<"','" << conteo<<"','"<< _estado2<<"','";
+    sql << tiempo<<"');";
        std::cout << sql.str() << std::endl;
 
        rc = sqlite3_exec(db, sql.str().c_str(),0,0, &zErrMsg);
@@ -184,15 +238,18 @@ db_local::db_local()
            return false;
        }
        else{
-           fprintf(stderr, "Opened database successfully\n");
+           fprintf(stderr, "Opened2 database successfully\n");
+           return true;
        }
-       return true;
+       cerrarDB();
    }
+
    /**
     * @brief db_local::cerrarDB
     * Esta funcion nos permite cerrar la base de datos.
     */
-  bool db_local::cerrarDB(){
 
+  bool db_local::cerrarDB(){
+       std::cout << "cerrar." <<endl;
        sqlite3_close( db );
   }

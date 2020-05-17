@@ -1,30 +1,27 @@
-#ifndef REGPC_H
-#define REGPC_H
+#ifndef REGU_H
+#define REGU_H
 
 #include <QDialog>
+#include"db_local.h"
+#include "qstring.h"
 #include <string>
-#include <sqlite3.h>
-#include "db_local.h"
-#include <vector>
 /**
- * @brief edad
+ * @brief edadus
  * Es una variable externa tipo entero que se declara de esta
  * manera para ser usada en varios archivos del proyecto de una manera facil y comoda retornando su valor asignado.
- */
-extern int edad;
 
-namespace Ui {
-/**
- * @brief The regpc class
- * Esta clase maneja la conexión con la ventana de dialogo QDialog donde
- * se registran los datos de un paciente nuevo.
- *
- * @details
  */
-class regpc;
+extern int edadus;
+namespace Ui {
+/*!
+ * @brief The QDialog class
+ * @details Esta clase denominada regu maneja la conexión con la ventana de dialogo donde
+ * se registran los datos de un usuario nuevo.
+ */
+class regu;
 }
 
-class regpc : public QDialog
+class regu : public QDialog
 {
     Q_OBJECT
 
@@ -33,22 +30,20 @@ public:
      * EL constructor de la clase.
      *
      */
-    explicit regpc(QWidget *parent = 0);
+    explicit regu(QWidget *parent = 0);
     /**
      * EL destructor de la clase.
      *
      */
-    ~regpc();
-    string nombre;     /*!< Es una variable en la que guardamos el nombre del paciente que se ingresa.  */
-    string apellido;   /*!< Es una variable usada para guardar el apellido del paciente.   */
-   string docident;    /*!< Es una variable que guarda el documento de identidad del paciente que se ingresó.  */
-    string fn;         /*!< Es una variable que guarda la fecha de nacimiento del paciente, almacenando los dias mes y año ingresados.  */
-    string direccion;  /*!< Es una variable que guarda la dirección del paciente que fue ingresada. */
-    string gn;         /*!< Es una variable que guarda el género del paciente. */
-    string rz;         /*!< Es una variable que guarda la raza del paciente.  */
-    string ningresos;  /*!< Es una variable que guarda el nivel de ingresos del paciente.   */
+    ~regu();
 
-
+    string user;       /*!< Es una variable que guarda el nickname del usuario.   */
+    string contra;     /*!<  Es una variable que guarda la contraseña del usuario.   */
+    string name;       /*!< Es una variable que guarda el nombre del usuario.   */
+    string lastname;   /*!< Es una variable que guarda el apellido del usuario.   */
+    string fn;         /*!< Es una variable que guarda la fecha de nacimiento  del usuario, almacenando los dias, el mes y el año, ingresados.  */
+    string doci;       /*!< Es una variable que guarda el documento de identidad del usuario.   */
+    
     int ano;           /*!< Es una variable que guarda el año de nacimiento del paciente que fue ingresado. */
     int mes;           /*!< Es una variable que guarda el mes de nacimiento del paciente.  */
     int dia;           /*!< Es una variable que guarda el dia de nacimiento  del paciente.  */
@@ -61,21 +56,19 @@ public:
     int aniomenos;     /*!< En esta variable se almacena el valor del año de nacimiento ingresado por el paciente y le suma uno para futuros calculos */
 
 private slots:
+
+    void on_buttonBox_accepted();
     void calcularedad();
-    void on_pushButton_clicked();
-
-    void on_generof_clicked();
-
-    void on_generom_clicked();
 
 private:
-    Ui::regpc *ui;
+    Ui::regu *ui;
     /**
-   * @brief _bd
+   * @brief _db
    * Se trata de una varible de la clase db_local que usamos para realizar varias operaciones relacionadas con la base de datos.
    */
-  db_local _bd;
+    db_local _db;
+
 
 };
 
-#endif // REGPC_H
+#endif // REGU_H

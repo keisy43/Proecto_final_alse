@@ -1,43 +1,41 @@
 #include "paciente.h"
 #include "ui_paciente.h"
 #include "tiempod.h"
-#include "db_local.h"
 #include "QDebug"
-#include"QtSql/QSqlDatabase"
-#include"QtSql/QSqlQuery"
-#include"QtSql/qsqlquery.h"
-#include"QtSql/QSqlError"
+#include "db_local.h"
 
+int docu;
+int nomb;
+/**
+ * @brief paciente::paciente
+ * Es la funcion del constructor que controla lo que pasa al abrirse  la ventana.
+ * @param parent
+ */
 paciente::paciente(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::paciente)
 {
     ui->setupUi(this);
-// _abrir=QSqlDatabase::addDatabase("QSQLITE");
-// _abrir.setDatabaseName("/home/alseuser/superproyecto_alse/PA/_Datos");
-//  if(_abrir.open()){
-//  qDebug()<<"abrio";
-//  }
-// else{
-// qDebug()<<"no abrio";
-// }
-
 }
-
+/**
+ * @brief paciente::~paciente
+ * Es la funcion del destructor que controla lo que pasa al cerrarse la ventana.
+ */
 paciente::~paciente()
 {
     delete ui;
 }
 
 /**
- * @brief regu::on_pushButton_clicked.
- * @details se asignan los datos ingresados en la ventana QDialog a unas variables
+ * @brief paciente::on_pushButton_clicked
+ * En esta funcion se asignan los datos ingresados en la ventana QDialog a unas variables
  * con las que se verifica si los valores ingresados estan en la
- * en la base de datos.
+ * en la base de datos y si es asi se abre la ventana siguiente .
  */
 
 void paciente::on_pushButton_clicked()
 {
+    this->hide();
     paciente a;
     db_local ac;
     ac.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
@@ -50,52 +48,49 @@ void paciente::on_pushButton_clicked()
 
     }
     ac.cerrarDB();
-
-//    QSqlQuery buscara;
-
-
-//     nombre=ui->nombrep->text();
-//    doci=ui->idp->text();
-//     qDebug()<<doci;
-//     sql.append("SELECT  * FROM _DATOSDP WHERE ( _NOMBRE = '"+nombre +"'); ");
-//      qDebug()<<sql;
-//     buscara.prepare(sql);
-//     if(buscara.exec()){
-//         qDebug()<<"consulta realizada";
-
-//        while (buscara.next()){
-
-//          doci2=buscara.value(2).toByteArray().constData();
-//          qDebug()<<doci2;
-//        }
-//      }
-//       else{
-//          qDebug()<<"error de consulta";
-//         }
-
-//     if(doci2==doci){
-
-//
-//   }
+    this->close();
 
 }
-
+/**
+ * @brief paciente::getDoci
+ * Es la funcion get de la variable doci que recupera o consigue el valor
+ * asignado en la funcion set para ser utilizado despues.
+ * @return el valor ingresado en la funcion set.
+ */
 string paciente::getDoci() const
 {
     return doci;
 }
-
+/**
+ * @brief paciente::setDoci
+ * Es la funcion set de la variable doci que nos permite darle
+ * un valor a esta.
+ * @param value es un puntero tipo string.
+ */
 void paciente::setDoci(const string &value)
 {
     doci = value;
+    docu=atoi(doci.c_str());
 }
+/**
+ * @brief paciente::getNombre
+ * Es la funcion get de la variable nombre que recupera o consigue el valor
+ * asignado en la funcion set para ser utilizado despues.
+ * @return el valor ingresado en la funcion set.
+ */
 
 string paciente::getNombre() const
 {
     return nombre;
 }
-
+/**
+ * @brief paciente::setNombre
+ * Es la funcion set de la variable nombre que nos permite darle
+ * un valor a esta.
+ * @param value es un puntero tipo string.
+ */
 void paciente::setNombre(const string &value)
 {
     nombre = value;
+    nomb=atoi(nombre.c_str());
 }

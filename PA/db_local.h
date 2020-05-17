@@ -1,9 +1,12 @@
 #ifndef DB_LOCAL_H
 #define DB_LOCAL_H
-#include "paciente.h"
+
+
 #include "usuario.h"
 #include <string>
 #include <sqlite3.h>
+#include "prueba.h"
+#include "paciente.h"
 
 using namespace std;
 
@@ -30,7 +33,7 @@ class db_local{
      bool cargarusuario(  string namenew, string lastnamenew, string fnnew,string docinew,string usernuevo,string contranew
              );
      bool cargarpaciente(string np,string appc,string Doc,string fecha,string genero,string raza,string direccion,string nin);
-     bool cargardatos(string doc,string aciertos,string boton, int min,int seg);
+     bool cargardatos(int docu, int conteo , int _estado2, int seg);
      bool verificarusuario(usuario &z);
      bool verificarpaciente(paciente &p);
      bool cerrarDB();
