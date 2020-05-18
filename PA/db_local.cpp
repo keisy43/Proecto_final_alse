@@ -10,7 +10,7 @@
 #include "QDebug"
 #include "prueba.h"
 #include "paciente.h"
-
+#include "regpc.h"
 using namespace std;
 db_local::db_local()
 {
@@ -137,15 +137,14 @@ int db_local::verfu(void *data, int argc, char **argv, char **azColName){
    * @return Un valor booleano que describe si pudieron guardar los datos en la DB o no.
    */
 
-   bool db_local::cargarpaciente(string np,string appc,string Doc,string fecha,string genero,string raza,string direccion,string nin){
+   bool db_local::cargarpaciente(string np,string appc,string Doc,string fecha,string genero,string raza,string direccion,string nin,int edad){
        char *zErrMsg = 0;
        int rc;
        std::stringstream sql;
 
-    sql <<"INSERT INTO _DATOSDP ( _NOMBRE ,_APELLIDO , _DOCIDENT,_FECHAN,_GENERO, _RAZA,_DIRECCION,_NINGRESOS ) VALUES (' ";
-    sql << np<<"','" << appc<<"','"<< Doc<<"','";
-    sql <<fecha<<"','"<<genero<<"','"<<raza<<"','"<<direccion<<"','"<<nin<<"');";
-
+    sql <<"INSERT INTO _DATOSDP ( _NOMBRE ,_APELLIDO , _DOCIDENT,_FECHAN,_GENERO, _RAZA,_DIRECCION,_NINGRESOS,_EDAD ) VALUES ('";
+    sql <<np<<"','" <<appc<<"','"<< Doc<<"','";
+    sql <<fecha<<"','"<<genero<<"','"<<raza<<"','"<<direccion<<"','"<<nin<<"','"<<edad<<"');";
        std::cout << sql.str() << std::endl;
 
        rc = sqlite3_exec(db, sql.str().c_str(),0,0, &zErrMsg);
@@ -187,10 +186,10 @@ int db_local::verfu(void *data, int argc, char **argv, char **azColName){
        }
        else{
            fprintf(stderr, "Opened1 database successfully\n");
-           return true;
+
        }
        sqlite3_close(db);
-     return cont;
+       return cont;
 
    }
    

@@ -3,6 +3,7 @@
 #include "tiempod.h"
 #include "QDebug"
 #include "db_local.h"
+#include "aciertos.h"
 
 int docu;
 int nomb;
@@ -42,9 +43,9 @@ void paciente::on_pushButton_clicked()
     a.setNombre(ui->nombrep->text().toStdString());
     a.setDoci(ui->idp->text().toStdString());
     if(ac.verificarpaciente(a)==true){
-            tiempod a(this);
-              a.show();
-              a.exec();
+        tiempod a(this);
+        a.show();
+        a.exec();
 
     }
     ac.cerrarDB();

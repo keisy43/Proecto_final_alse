@@ -53,9 +53,12 @@ void regpc::on_pushButton_clicked()
 
     fn=to_string (dia)+"-"+ to_string (mes)+"-"+to_string (ano);
     calcularedad();
-   _bd.cargarpaciente(nombre,apellido,docident,fn ,gn, direccion,rz,ningresos);
-
+   _bd.cargarpaciente(nombre,apellido,docident,fn ,gn, direccion,rz,ningresos,edad);
    this->hide();
+   menu z(this);
+   z.setModal(true);
+   z.show();
+   z.exec();
 
 
 

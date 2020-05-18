@@ -32,7 +32,7 @@ class db_local{
      bool abrirDB( string path );
      bool cargarusuario(  string namenew, string lastnamenew, string fnnew,string docinew,string usernuevo,string contranew
              );
-     bool cargarpaciente(string np,string appc,string Doc,string fecha,string genero,string raza,string direccion,string nin);
+     bool cargarpaciente(string np,string appc,string Doc,string fecha,string genero,string raza,string direccion,string nin,int edad);
      bool cargardatos(int docu, int conteo , int _estado2, int seg);
      bool verificarusuario(usuario &z);
      bool verificarpaciente(paciente &p);

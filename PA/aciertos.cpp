@@ -2,6 +2,9 @@
 #include "ui_aciertos.h"
 #include "prueba.h"
 #include "menu.h"
+#include "regpc.h"
+#include <QString>
+#include "paciente.h"
 
 /**
  * @brief aciertos::aciertos
@@ -14,6 +17,8 @@ aciertos::aciertos(QWidget *parent) :
     ui(new Ui::aciertos)
 {
     ui->setupUi(this);
+
+
 
     if (_nota<3.0){
         ui->panel->setText("     ¡ Mal ! Debes esforzarte más.");
@@ -63,3 +68,4 @@ void aciertos::on_pushButton_2_clicked()
 {
     this->close();
 }
+

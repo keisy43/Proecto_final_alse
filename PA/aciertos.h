@@ -2,7 +2,9 @@
 #define ACIERTOS_H
 #include "prueba.h"
 #include <QDialog>
-
+#include <QString>
+#include <string>
+#include "qstring.h"
 
 namespace Ui {
 /**
