@@ -1,0 +1,179 @@
+\hypertarget{classdb__local}{}\section{db\+\_\+local Class Reference}
+\label{classdb__local}\index{db\+\_\+local@{db\+\_\+local}}
+
+
+The db\+\_\+\+Local class Esta clase maneja la conexión con la bases de datos en S\+Q\+Lite3 para almacenar permanentemente los datos en un archivo.  
+
+
+
+
+{\ttfamily \#include $<$db\+\_\+local.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classdb__local_a64ad8edee1a11c82f5d96bfd10a5fdd3}{abrir\+DB} (string path)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classdb__local_a64ad8edee1a11c82f5d96bfd10a5fdd3}{db\+\_\+local\+::abrir\+DB} \end{DoxyCompactList}\item 
+bool \hyperlink{classdb__local_a4f93f54ed2cacb6d8c1da7b2039f5ff3}{cargarusuario} (string namenew, string lastnamenew, string fnnew, string docinew, string usernuevo, string contranew)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classdb__local_a4f93f54ed2cacb6d8c1da7b2039f5ff3}{db\+\_\+local\+::cargarusuario} \end{DoxyCompactList}\item 
+bool \hyperlink{classdb__local_ad208904f698ad775e2a14f9f0220d251}{cargarpaciente} (string np, string appc, string Doc, string fecha, string genero, string raza, string direccion, string nin, int edad)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classdb__local_ad208904f698ad775e2a14f9f0220d251}{db\+\_\+local\+::cargarpaciente} \end{DoxyCompactList}\item 
+bool \hyperlink{classdb__local_abfb0cb98687cd548429b15e537fbaf2f}{cargardatos} (int docu, int conteo, int \+\_\+estado2, int seg)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classdb__local_abfb0cb98687cd548429b15e537fbaf2f}{db\+\_\+local\+::cargardatos} \end{DoxyCompactList}\item 
+bool \hyperlink{classdb__local_a54ef2e3aa44fcfb68f9dd02c64ae8421}{verificarusuario} (\hyperlink{classusuario}{usuario} \&z)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classdb__local_a54ef2e3aa44fcfb68f9dd02c64ae8421}{db\+\_\+local\+::verificarusuario} \end{DoxyCompactList}\item 
+bool \hyperlink{classdb__local_af39c3f536549485b9ec8e614f92870c1}{verificarpaciente} (\hyperlink{classpaciente}{paciente} \&p)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classdb__local_af39c3f536549485b9ec8e614f92870c1}{db\+\_\+local\+::verificarpaciente} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdb__local_a114b03d9bae1bc433d5e3bf5b38885fe}\label{classdb__local_a114b03d9bae1bc433d5e3bf5b38885fe}} 
+bool \hyperlink{classdb__local_a114b03d9bae1bc433d5e3bf5b38885fe}{cerrar\+DB} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classdb__local_a114b03d9bae1bc433d5e3bf5b38885fe}{db\+\_\+local\+::cerrar\+DB} Esta función nos permite cerrar la base de datos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The db\+\_\+\+Local class Esta clase maneja la conexión con la bases de datos en S\+Q\+Lite3 para almacenar permanentemente los datos en un archivo. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdb__local_a64ad8edee1a11c82f5d96bfd10a5fdd3}\label{classdb__local_a64ad8edee1a11c82f5d96bfd10a5fdd3}} 
+\index{db\+\_\+local@{db\+\_\+local}!abrir\+DB@{abrir\+DB}}
+\index{abrir\+DB@{abrir\+DB}!db\+\_\+local@{db\+\_\+local}}
+\subsubsection{\texorpdfstring{abrir\+D\+B()}{abrirDB()}}
+{\footnotesize\ttfamily bool db\+\_\+local\+::abrir\+DB (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classdb__local_a64ad8edee1a11c82f5d96bfd10a5fdd3}{db\+\_\+local\+::abrir\+DB} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Es la ubicación absoluta o relativa de la DB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un valor booleano que describe si se pudo abrir la DB o no. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdb__local_abfb0cb98687cd548429b15e537fbaf2f}\label{classdb__local_abfb0cb98687cd548429b15e537fbaf2f}} 
+\index{db\+\_\+local@{db\+\_\+local}!cargardatos@{cargardatos}}
+\index{cargardatos@{cargardatos}!db\+\_\+local@{db\+\_\+local}}
+\subsubsection{\texorpdfstring{cargardatos()}{cargardatos()}}
+{\footnotesize\ttfamily bool db\+\_\+local\+::cargardatos (\begin{DoxyParamCaption}\item[{int}]{docu,  }\item[{int}]{conteo,  }\item[{int}]{\+\_\+estado2,  }\item[{int}]{tiempo }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classdb__local_abfb0cb98687cd548429b15e537fbaf2f}{db\+\_\+local\+::cargardatos} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em docu} & Es el número de documento del paciente que va a realizar la prueba. \\
+\hline
+{\em conteo} & Es el número de aciertos que obtuvo el paciente en la prueba. \\
+\hline
+{\em \+\_\+estado2} & Es el que indica el botón que se encuentra prendido. \\
+\hline
+{\em tiempo} & Indica el tiempo que lleva transcurrido de la prueba. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un valor boleano que describe si pudieron guardar los datos en la DB o no. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdb__local_ad208904f698ad775e2a14f9f0220d251}\label{classdb__local_ad208904f698ad775e2a14f9f0220d251}} 
+\index{db\+\_\+local@{db\+\_\+local}!cargarpaciente@{cargarpaciente}}
+\index{cargarpaciente@{cargarpaciente}!db\+\_\+local@{db\+\_\+local}}
+\subsubsection{\texorpdfstring{cargarpaciente()}{cargarpaciente()}}
+{\footnotesize\ttfamily bool db\+\_\+local\+::cargarpaciente (\begin{DoxyParamCaption}\item[{string}]{np,  }\item[{string}]{appc,  }\item[{string}]{Doc,  }\item[{string}]{fecha,  }\item[{string}]{genero,  }\item[{string}]{raza,  }\item[{string}]{direccion,  }\item[{string}]{nin,  }\item[{int}]{edad }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classdb__local_ad208904f698ad775e2a14f9f0220d251}{db\+\_\+local\+::cargarpaciente} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em np} & Es el nombre del paciente nuevo. \\
+\hline
+{\em appc} & Es el apellido del paciente nuevo. \\
+\hline
+{\em fecha} & Es la fecha de nacimiento del paciente nuevo. \\
+\hline
+{\em Doc} & Es el documento de identidad del paciente nuevo. \\
+\hline
+{\em genero} & Es el género del paciente nuevo. \\
+\hline
+{\em raza} & Es la raza del paciente nuevo. \\
+\hline
+{\em direccion} & Es la dirección del paciente nuevo. \\
+\hline
+{\em nin} & Es el nivel de ingresos del paciente nuevo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un valor booleano que describe si pudieron guardar los datos en la DB o no. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdb__local_a4f93f54ed2cacb6d8c1da7b2039f5ff3}\label{classdb__local_a4f93f54ed2cacb6d8c1da7b2039f5ff3}} 
+\index{db\+\_\+local@{db\+\_\+local}!cargarusuario@{cargarusuario}}
+\index{cargarusuario@{cargarusuario}!db\+\_\+local@{db\+\_\+local}}
+\subsubsection{\texorpdfstring{cargarusuario()}{cargarusuario()}}
+{\footnotesize\ttfamily bool db\+\_\+local\+::cargarusuario (\begin{DoxyParamCaption}\item[{string}]{namenew,  }\item[{string}]{lastnamenew,  }\item[{string}]{fnnew,  }\item[{string}]{docinew,  }\item[{string}]{usernuevo,  }\item[{string}]{contranew }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classdb__local_a4f93f54ed2cacb6d8c1da7b2039f5ff3}{db\+\_\+local\+::cargarusuario} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em namenew} & Es el nombre del usuario nuevo que se desea registrar. \\
+\hline
+{\em lastnamenew} & Es el apellido del usuario nuevo a registrar. \\
+\hline
+{\em fnnew} & Es la fecha de nacimiento del usuario nuevo. \\
+\hline
+{\em docinew} & Es el documento de identidad del usuario nuevo. \\
+\hline
+{\em usernew} & Es el nickname del usuario nuevo. \\
+\hline
+{\em contranew} & Es la contraseña del usuario nuevo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un valor booleano que describe si pudieron guardar los datos en la DB o no. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdb__local_af39c3f536549485b9ec8e614f92870c1}\label{classdb__local_af39c3f536549485b9ec8e614f92870c1}} 
+\index{db\+\_\+local@{db\+\_\+local}!verificarpaciente@{verificarpaciente}}
+\index{verificarpaciente@{verificarpaciente}!db\+\_\+local@{db\+\_\+local}}
+\subsubsection{\texorpdfstring{verificarpaciente()}{verificarpaciente()}}
+{\footnotesize\ttfamily bool db\+\_\+local\+::verificarpaciente (\begin{DoxyParamCaption}\item[{\hyperlink{classpaciente}{paciente} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classdb__local_af39c3f536549485b9ec8e614f92870c1}{db\+\_\+local\+::verificarpaciente} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&p} & Es un puntero de la clase paciente que nos permite retornar los datos ingresados del paciente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un valor booleano que describe si los datos ingresados están en la DB o no. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdb__local_a54ef2e3aa44fcfb68f9dd02c64ae8421}\label{classdb__local_a54ef2e3aa44fcfb68f9dd02c64ae8421}} 
+\index{db\+\_\+local@{db\+\_\+local}!verificarusuario@{verificarusuario}}
+\index{verificarusuario@{verificarusuario}!db\+\_\+local@{db\+\_\+local}}
+\subsubsection{\texorpdfstring{verificarusuario()}{verificarusuario()}}
+{\footnotesize\ttfamily bool db\+\_\+local\+::verificarusuario (\begin{DoxyParamCaption}\item[{\hyperlink{classusuario}{usuario} \&}]{z }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classdb__local_a54ef2e3aa44fcfb68f9dd02c64ae8421}{db\+\_\+local\+::verificarusuario} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&z} & Es un puntero de la clase paciente que nos permite retornar los datos ingresados del usuario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un valor booleano que describe si los datos ingresados si están en la DB o no. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/alseuser/\+Proecto\+\_\+final\+\_\+alse/\+P\+A/db\+\_\+local.\+h\item 
+/home/alseuser/\+Proecto\+\_\+final\+\_\+alse/\+P\+A/db\+\_\+local.\+cpp\end{DoxyCompactItemize}

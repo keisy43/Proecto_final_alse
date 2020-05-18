@@ -1,0 +1,275 @@
+\hypertarget{classregpc}{}\section{regpc Class Reference}
+\label{classregpc}\index{regpc@{regpc}}
+
+
+Esta clase maneja la conexión con la ventana de dialogo Q\+Dialog donde se registran los datos de un paciente nuevo.  
+
+
+
+
+{\ttfamily \#include $<$regpc.\+h$>$}
+
+Inheritance diagram for regpc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classregpc}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classregpc_a0126d0e41901f442a138c3fc2236df9a}{on\+\_\+guardar\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classregpc_a0126d0e41901f442a138c3fc2236df9a}{regpc\+::on\+\_\+guardar\+\_\+clicked} \end{DoxyCompactList}\item 
+void \hyperlink{classregpc_aebdc318917c7ea9b3a2aca0e8155f854}{on\+\_\+generof\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classregpc_aebdc318917c7ea9b3a2aca0e8155f854}{regpc\+::on\+\_\+generof\+\_\+clicked} \end{DoxyCompactList}\item 
+void \hyperlink{classregpc_a5e7c8c456ee0a0a51e341d00bd0d8ba3}{on\+\_\+generom\+\_\+clicked} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classregpc_a5e7c8c456ee0a0a51e341d00bd0d8ba3}{regpc\+::on\+\_\+generom\+\_\+clicked} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classregpc_a0e746dd80042db7863f1acc0eceb3e0e}{regpc} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classregpc_a0e746dd80042db7863f1acc0eceb3e0e}{regpc\+::regpc} Es la función del constructor que controla lo que pasa al abrirse la ventana. \end{DoxyCompactList}\item 
+\hyperlink{classregpc_a44345c70fea1c353bde3cd00e4a05c1d}{$\sim$regpc} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classregpc_a44345c70fea1c353bde3cd00e4a05c1d}{regpc\+::$\sim$regpc} Es la función del destructor que controla lo que pasa al cerrarse la ventana. \end{DoxyCompactList}\item 
+void \hyperlink{classregpc_a4c2805dbeac86a39d8afd591c7f14ec9}{calcularedad} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classregpc_a4c2805dbeac86a39d8afd591c7f14ec9}{regpc\+::calcularedad} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classregpc_a95b954b79eb473167a8e631833d756ad}{nombre}
+\item 
+string \hyperlink{classregpc_a8b52a6da10996801ea903a96ae8123da}{apellido}
+\item 
+string \hyperlink{classregpc_a7b918d9a415903d63944d3ef17e48c3d}{docident}
+\item 
+string \hyperlink{classregpc_a0db133a320356ff6a456cee7f2d34720}{fn}
+\item 
+string \hyperlink{classregpc_a316ab55a02639999cc96f751997a521e}{direccion}
+\item 
+string \hyperlink{classregpc_ad7cee8fe68a32c50e6de8c621e3c61bc}{gn}
+\item 
+string \hyperlink{classregpc_a76fa61f1dbcfb75c08707c4c9cb71b43}{rz}
+\item 
+string \hyperlink{classregpc_a3634b2c40b40e029561728334d2a6b72}{ningresos}
+\item 
+int \hyperlink{classregpc_adab18fcfafb988836d4e33a4a3e840fa}{ano}
+\item 
+int \hyperlink{classregpc_a4b33b5752a60e0e6223d6204a9001457}{mes}
+\item 
+int \hyperlink{classregpc_ad83f7e1e40414037d8da89c050c239ea}{dia}
+\item 
+int \hyperlink{classregpc_a30dcf993ad2a2c2b4dff62753376e42f}{anioac}
+\item 
+int \hyperlink{classregpc_a769fa5789fc163701f43fbcd7e30dd68}{mesac}
+\item 
+int \hyperlink{classregpc_a69ada6ac0632885a0633c1cb8615642c}{diaac}
+\item 
+int \hyperlink{classregpc_a81c1c48cfc985ea5d53439bf14f6b73a}{diaactual}
+\item 
+int \hyperlink{classregpc_a94335c103d8a6cbe1252c99f6ca28b37}{mesactual}
+\item 
+int \hyperlink{classregpc_a230854b12d5c6be4af761d70580bd96d}{anioactual}
+\item 
+int \hyperlink{classregpc_abc23efe29a835935e3ec385a0259646e}{aniomenos}
+\item 
+\hyperlink{classdb__local}{db\+\_\+local} \hyperlink{classregpc_ad9477593f0a84b7cf606338133d48a48}{\+\_\+ac}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Esta clase maneja la conexión con la ventana de dialogo Q\+Dialog donde se registran los datos de un paciente nuevo. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classregpc_a0e746dd80042db7863f1acc0eceb3e0e}\label{classregpc_a0e746dd80042db7863f1acc0eceb3e0e}} 
+\index{regpc@{regpc}!regpc@{regpc}}
+\index{regpc@{regpc}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{regpc()}{regpc()}}
+{\footnotesize\ttfamily regpc\+::regpc (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\hyperlink{classregpc_a0e746dd80042db7863f1acc0eceb3e0e}{regpc\+::regpc} Es la función del constructor que controla lo que pasa al abrirse la ventana. 
+
+EL constructor de la clase.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Es un puntero tipo Q\+Widget. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classregpc_a44345c70fea1c353bde3cd00e4a05c1d}\label{classregpc_a44345c70fea1c353bde3cd00e4a05c1d}} 
+\index{regpc@{regpc}!````~regpc@{$\sim$regpc}}
+\index{````~regpc@{$\sim$regpc}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{$\sim$regpc()}{~regpc()}}
+{\footnotesize\ttfamily regpc\+::$\sim$regpc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classregpc_a44345c70fea1c353bde3cd00e4a05c1d}{regpc\+::$\sim$regpc} Es la función del destructor que controla lo que pasa al cerrarse la ventana. 
+
+EL destructor de la clase. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classregpc_a4c2805dbeac86a39d8afd591c7f14ec9}\label{classregpc_a4c2805dbeac86a39d8afd591c7f14ec9}} 
+\index{regpc@{regpc}!calcularedad@{calcularedad}}
+\index{calcularedad@{calcularedad}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{calcularedad()}{calcularedad()}}
+{\footnotesize\ttfamily void regpc\+::calcularedad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classregpc_a4c2805dbeac86a39d8afd591c7f14ec9}{regpc\+::calcularedad} 
+
+Esta función es usada para calcular la edad del paciente, para ello se usa la fecha de nacimiento y la fecha actual, estas dos en dias, meses y años. Y retorna la edad del paciente. \mbox{\Hypertarget{classregpc_aebdc318917c7ea9b3a2aca0e8155f854}\label{classregpc_aebdc318917c7ea9b3a2aca0e8155f854}} 
+\index{regpc@{regpc}!on\+\_\+generof\+\_\+clicked@{on\+\_\+generof\+\_\+clicked}}
+\index{on\+\_\+generof\+\_\+clicked@{on\+\_\+generof\+\_\+clicked}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{on\+\_\+generof\+\_\+clicked}{on\_generof\_clicked}}
+{\footnotesize\ttfamily void regpc\+::on\+\_\+generof\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\hyperlink{classregpc_aebdc318917c7ea9b3a2aca0e8155f854}{regpc\+::on\+\_\+generof\+\_\+clicked} 
+
+En esta función lo que hacemos es guardar en la variable gn, referente al género de la persona, mediante un radiobutton, en este caso se guarda el string \char`\"{}\+Femenino\char`\"{}. \mbox{\Hypertarget{classregpc_a5e7c8c456ee0a0a51e341d00bd0d8ba3}\label{classregpc_a5e7c8c456ee0a0a51e341d00bd0d8ba3}} 
+\index{regpc@{regpc}!on\+\_\+generom\+\_\+clicked@{on\+\_\+generom\+\_\+clicked}}
+\index{on\+\_\+generom\+\_\+clicked@{on\+\_\+generom\+\_\+clicked}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{on\+\_\+generom\+\_\+clicked}{on\_generom\_clicked}}
+{\footnotesize\ttfamily void regpc\+::on\+\_\+generom\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\hyperlink{classregpc_a5e7c8c456ee0a0a51e341d00bd0d8ba3}{regpc\+::on\+\_\+generom\+\_\+clicked} 
+
+En esta función lo que hacemos es guardar en la variable gn, referente al género de la persona, mediante un radiobutton, en este caso se guarda el string \char`\"{}\+Masculino\char`\"{}. \mbox{\Hypertarget{classregpc_a0126d0e41901f442a138c3fc2236df9a}\label{classregpc_a0126d0e41901f442a138c3fc2236df9a}} 
+\index{regpc@{regpc}!on\+\_\+guardar\+\_\+clicked@{on\+\_\+guardar\+\_\+clicked}}
+\index{on\+\_\+guardar\+\_\+clicked@{on\+\_\+guardar\+\_\+clicked}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{on\+\_\+guardar\+\_\+clicked}{on\_guardar\_clicked}}
+{\footnotesize\ttfamily void regpc\+::on\+\_\+guardar\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\hyperlink{classregpc_a0126d0e41901f442a138c3fc2236df9a}{regpc\+::on\+\_\+guardar\+\_\+clicked} 
+
+Se asignan los datos ingresados en la ventana Q\+Dialog, referentes a los datos del paciente,a unas variables que se le pasan por referencia a la función cargarpaciente para que guarde los valores en la base de datos, al hacerle click al boton guardar. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classregpc_ad9477593f0a84b7cf606338133d48a48}\label{classregpc_ad9477593f0a84b7cf606338133d48a48}} 
+\index{regpc@{regpc}!\+\_\+ac@{\+\_\+ac}}
+\index{\+\_\+ac@{\+\_\+ac}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{\+\_\+ac}{\_ac}}
+{\footnotesize\ttfamily \hyperlink{classdb__local}{db\+\_\+local} regpc\+::\+\_\+ac}
+
+Se trata de una varible de la clase \hyperlink{classdb__local}{db\+\_\+local} que usamos para realizar varias operaciones relacionadas con la base de datos. \mbox{\Hypertarget{classregpc_a30dcf993ad2a2c2b4dff62753376e42f}\label{classregpc_a30dcf993ad2a2c2b4dff62753376e42f}} 
+\index{regpc@{regpc}!anioac@{anioac}}
+\index{anioac@{anioac}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{anioac}{anioac}}
+{\footnotesize\ttfamily int regpc\+::anioac}
+
+Es una variable que guarda el año actual dado por el sistema . \mbox{\Hypertarget{classregpc_a230854b12d5c6be4af761d70580bd96d}\label{classregpc_a230854b12d5c6be4af761d70580bd96d}} 
+\index{regpc@{regpc}!anioactual@{anioactual}}
+\index{anioactual@{anioactual}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{anioactual}{anioactual}}
+{\footnotesize\ttfamily int regpc\+::anioactual}
+
+Es una variable que almacena el valor real del año actual arrojado por el sistema. \mbox{\Hypertarget{classregpc_abc23efe29a835935e3ec385a0259646e}\label{classregpc_abc23efe29a835935e3ec385a0259646e}} 
+\index{regpc@{regpc}!aniomenos@{aniomenos}}
+\index{aniomenos@{aniomenos}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{aniomenos}{aniomenos}}
+{\footnotesize\ttfamily int regpc\+::aniomenos}
+
+En esta variable se almacena el valor del año de nacimiento ingresado por el paciente y le suma uno para futuros cálculos \mbox{\Hypertarget{classregpc_adab18fcfafb988836d4e33a4a3e840fa}\label{classregpc_adab18fcfafb988836d4e33a4a3e840fa}} 
+\index{regpc@{regpc}!ano@{ano}}
+\index{ano@{ano}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{ano}{ano}}
+{\footnotesize\ttfamily int regpc\+::ano}
+
+Es una variable que guarda el año de nacimiento del paciente que fue ingresado. \mbox{\Hypertarget{classregpc_a8b52a6da10996801ea903a96ae8123da}\label{classregpc_a8b52a6da10996801ea903a96ae8123da}} 
+\index{regpc@{regpc}!apellido@{apellido}}
+\index{apellido@{apellido}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{apellido}{apellido}}
+{\footnotesize\ttfamily string regpc\+::apellido}
+
+Es una variable usada para guardar el apellido del paciente. \mbox{\Hypertarget{classregpc_ad83f7e1e40414037d8da89c050c239ea}\label{classregpc_ad83f7e1e40414037d8da89c050c239ea}} 
+\index{regpc@{regpc}!dia@{dia}}
+\index{dia@{dia}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{dia}{dia}}
+{\footnotesize\ttfamily int regpc\+::dia}
+
+Es una variable que guarda el dia de nacimiento del paciente. \mbox{\Hypertarget{classregpc_a69ada6ac0632885a0633c1cb8615642c}\label{classregpc_a69ada6ac0632885a0633c1cb8615642c}} 
+\index{regpc@{regpc}!diaac@{diaac}}
+\index{diaac@{diaac}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{diaac}{diaac}}
+{\footnotesize\ttfamily int regpc\+::diaac}
+
+Es una variable que guarda el dia actual dado por el sistema. \mbox{\Hypertarget{classregpc_a81c1c48cfc985ea5d53439bf14f6b73a}\label{classregpc_a81c1c48cfc985ea5d53439bf14f6b73a}} 
+\index{regpc@{regpc}!diaactual@{diaactual}}
+\index{diaactual@{diaactual}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{diaactual}{diaactual}}
+{\footnotesize\ttfamily int regpc\+::diaactual}
+
+Es una variable que almacena el valor real del dia actual arrojado por el sistema. \mbox{\Hypertarget{classregpc_a316ab55a02639999cc96f751997a521e}\label{classregpc_a316ab55a02639999cc96f751997a521e}} 
+\index{regpc@{regpc}!direccion@{direccion}}
+\index{direccion@{direccion}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{direccion}{direccion}}
+{\footnotesize\ttfamily string regpc\+::direccion}
+
+Es una variable que guarda la dirección del paciente que fue ingresada. \mbox{\Hypertarget{classregpc_a7b918d9a415903d63944d3ef17e48c3d}\label{classregpc_a7b918d9a415903d63944d3ef17e48c3d}} 
+\index{regpc@{regpc}!docident@{docident}}
+\index{docident@{docident}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{docident}{docident}}
+{\footnotesize\ttfamily string regpc\+::docident}
+
+Es una variable que guarda el documento de identidad del paciente que se ingresó. \mbox{\Hypertarget{classregpc_a0db133a320356ff6a456cee7f2d34720}\label{classregpc_a0db133a320356ff6a456cee7f2d34720}} 
+\index{regpc@{regpc}!fn@{fn}}
+\index{fn@{fn}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{fn}{fn}}
+{\footnotesize\ttfamily string regpc\+::fn}
+
+Es una variable que guarda la fecha de nacimiento del paciente, almacenando los dias mes y año ingresados. \mbox{\Hypertarget{classregpc_ad7cee8fe68a32c50e6de8c621e3c61bc}\label{classregpc_ad7cee8fe68a32c50e6de8c621e3c61bc}} 
+\index{regpc@{regpc}!gn@{gn}}
+\index{gn@{gn}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{gn}{gn}}
+{\footnotesize\ttfamily string regpc\+::gn}
+
+Es una variable que guarda el género del paciente. \mbox{\Hypertarget{classregpc_a4b33b5752a60e0e6223d6204a9001457}\label{classregpc_a4b33b5752a60e0e6223d6204a9001457}} 
+\index{regpc@{regpc}!mes@{mes}}
+\index{mes@{mes}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{mes}{mes}}
+{\footnotesize\ttfamily int regpc\+::mes}
+
+Es una variable que guarda el mes de nacimiento del paciente. \mbox{\Hypertarget{classregpc_a769fa5789fc163701f43fbcd7e30dd68}\label{classregpc_a769fa5789fc163701f43fbcd7e30dd68}} 
+\index{regpc@{regpc}!mesac@{mesac}}
+\index{mesac@{mesac}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{mesac}{mesac}}
+{\footnotesize\ttfamily int regpc\+::mesac}
+
+Es una variable que guarda el mes actual dado por el sistema. \mbox{\Hypertarget{classregpc_a94335c103d8a6cbe1252c99f6ca28b37}\label{classregpc_a94335c103d8a6cbe1252c99f6ca28b37}} 
+\index{regpc@{regpc}!mesactual@{mesactual}}
+\index{mesactual@{mesactual}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{mesactual}{mesactual}}
+{\footnotesize\ttfamily int regpc\+::mesactual}
+
+Es una variable que almacena el valor real del mes actual arrojado por el sistema. \mbox{\Hypertarget{classregpc_a3634b2c40b40e029561728334d2a6b72}\label{classregpc_a3634b2c40b40e029561728334d2a6b72}} 
+\index{regpc@{regpc}!ningresos@{ningresos}}
+\index{ningresos@{ningresos}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{ningresos}{ningresos}}
+{\footnotesize\ttfamily string regpc\+::ningresos}
+
+Es una variable que guarda el nivel de ingresos del paciente. \mbox{\Hypertarget{classregpc_a95b954b79eb473167a8e631833d756ad}\label{classregpc_a95b954b79eb473167a8e631833d756ad}} 
+\index{regpc@{regpc}!nombre@{nombre}}
+\index{nombre@{nombre}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{nombre}{nombre}}
+{\footnotesize\ttfamily string regpc\+::nombre}
+
+Es una variable en la que guardamos el nombre del paciente que se ingresa. \mbox{\Hypertarget{classregpc_a76fa61f1dbcfb75c08707c4c9cb71b43}\label{classregpc_a76fa61f1dbcfb75c08707c4c9cb71b43}} 
+\index{regpc@{regpc}!rz@{rz}}
+\index{rz@{rz}!regpc@{regpc}}
+\subsubsection{\texorpdfstring{rz}{rz}}
+{\footnotesize\ttfamily string regpc\+::rz}
+
+Es una variable que guarda la raza del paciente. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/alseuser/\+Proecto\+\_\+final\+\_\+alse/\+P\+A/regpc.\+h\item 
+/home/alseuser/\+Proecto\+\_\+final\+\_\+alse/\+P\+A/regpc.\+cpp\end{DoxyCompactItemize}
