@@ -28,13 +28,12 @@ paciente::~paciente()
 }
 
 /**
- * @brief paciente::on_pushButton_clicked
- * En esta función se asignan los datos ingresados en la ventana QDialog a unas variables
+ * @brief paciente::on_RealizarPrueba_clicked
+ * @details En esta función se asignan los datos ingresados en la ventana QDialog a unas variables
  * con las que se verifica si los valores ingresados estan en la
  * en la base de datos y si es así, se abre la ventana siguiente .
  */
-
-void paciente::on_pushButton_clicked()
+void paciente::on_RealizarPrueba_clicked()
 {
     this->hide();
     paciente a;
@@ -50,11 +49,11 @@ void paciente::on_pushButton_clicked()
     }
     ac.cerrarDB();
     this->close();
-
 }
+
 /**
  * @brief paciente::getDoci
- * Es la función get de la variable "doci" que recupera o consigue el valor
+ * @details  Es la función get de la variable "doci" que recupera o consigue el valor
  * asignado en la función set para ser utilizado después.
  * @return El valor ingresado en la función set.
  */
@@ -64,7 +63,7 @@ string paciente::getDoci() const
 }
 /**
  * @brief paciente::setDoci
- * Es la función set de la variable "doci" que nos permite darle
+ * @details Es la función set de la variable "doci" que nos permite darle
  * un valor a esta.
  * @param value Es un puntero tipo const string.
  */
@@ -75,7 +74,7 @@ void paciente::setDoci(const string &value)
 }
 /**
  * @brief paciente::getNombre
- * Es la función get de la variable "nombre" que recupera o consigue el valor
+ * @details Es la función get de la variable "nombre" que recupera o consigue el valor
  * asignado en la función set para ser utilizado después.
  * @return El valor ingresado en la función set.
  */
@@ -86,7 +85,7 @@ string paciente::getNombre() const
 }
 /**
  * @brief paciente::setNombre
- * Es la función set de la variable "nombre" que nos permite darle
+ * @details Es la función set de la variable "nombre" que nos permite darle
  * un valor a esta.
  * @param value Es un puntero tipo const string.
  */
@@ -95,3 +94,5 @@ void paciente::setNombre(const string &value)
     nombre = value;
     nomb=atoi(nombre.c_str());
 }
+
+

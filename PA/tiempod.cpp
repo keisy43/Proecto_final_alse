@@ -26,8 +26,9 @@ tiempod::~tiempod()
 }
 /**
  * @brief tiempod::on_buttonBox_accepted
- * En esta función se define el tiempo de duracion de la prueba mediante el valor ingresado por el usuario.
- * Se retorna la variable entera duración.
+ * @details En esta función se define el tiempo de duracion de
+ *  la prueba mediante el valor ingresado por el usuario al hacerle click al boton de okay.
+ * @return la variable entera duración.
  */
 
 void tiempod::on_buttonBox_accepted()
@@ -49,7 +50,7 @@ void tiempod::on_buttonBox_accepted()
 }
 /**
  * @brief tiempod::on_buttonBox_rejected
- * En esta función definimos lo ocurrido al dar click en el botón de "cancel", en esta
+ * @details En esta función definimos lo ocurrido al dar click en el botón de "cancel", en esta
  * ocasión la ventana se cerrará y regresará a la ventana anterior.
  */
 void tiempod::on_buttonBox_rejected()

@@ -7,25 +7,26 @@
 #include "qstring.h"
 #include <string>
 #include <QMainWindow>
+/**
+ * @class paciente
+ * @brief Esta clase maneja la verificación de un paciente en la base de datos.
+ */
 
 /**
- * @brief docu
- * Es una variable externa tipo entero que se declara de esta
+ * @variable docu
+ * @brief Es una variable externa tipo entero que se declara de esta
  * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
  */
 extern int docu;
 /**
- * @brief nomb
- * Es una variable externa tipo entero que se declara de esta
+ * @variable nomb
+ *  @brief Es una variable externa tipo entero que se declara de esta
  * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
  */
 extern int nomb;
 using namespace std;
 namespace Ui {
-/**
- *@brief paciente
- * Esta clase maneja la verificación de un paciente en la base de datos.
- */
+
 class paciente;
 }
 
@@ -52,27 +53,25 @@ public:
     string getDoci() const;
     void setDoci(const string &value);
 
-private slots:
-    /**
-     * @brief on_pushButton_clicked
-     *
-     */
-    void on_pushButton_clicked();
+public slots:
+
+
+    void on_RealizarPrueba_clicked();
 
 private:
     Ui::paciente *ui;
 
     /**
-     * @brief nombre
-     * Es un atributo privado de la clase que sera utilizado
+     * @variable nombre
+     *  @brief Es un atributo privado de la clase que sera utilizado
      * para guardar el nombre ingresado.
      */
 
     string nombre;
 
     /**
-     * @brief doci
-     * Es un atributo privado de la clase que sera utilizado para
+     *@variable  doci
+     *@brief Es un atributo privado de la clase que sera utilizado para
      * guardar el documento de identidad ingresado.
      */
 

@@ -3,29 +3,30 @@
 #include "qstring.h"
 #include <string>
 #include <QMainWindow>
-#include"QtSql/QSqlDatabase"
-#include"QtSql/QSqlQuery"
-#include"QtSql/qsqlquery.h"
-#include"QtSql/QSqlError"
-using namespace std;
+/**
+ *@class usuario
+ * @brief esta clase maneja la verificacion de usuario que se realiza
+ * en la ventana principal.
+ */
 
 /*!
  *\namespace QMainWindow
- * @brief The  usuario class llamada usuario.
- * @details Esta clase maneja la venta principal que es la primera que vemos
+ * @brief Esta clase maneja la venta principal que es la primera que vemos
  * al abrir la aplicación.
- *\namespace QSqlDatabase
- * @brief es un tipo de variable que nos permite usar diferrentes funciones
- * de las DB.
  *\namespace QString
  * @brief es un tipo de variable que nos permite usar los valores que ingresamos
  * en las ventanas de Qt.
- * \namespace  QSqlQuery
- * @brief es un tipo de variable que nos permite usar los valores que ingresamos
- * en las ventanas de Qt.
- */
+
+ * \namespace ui
+ * @brief
+
+  */
+
+using namespace std;
+
 
 namespace Ui {
+
 class usuario;
 }
 
@@ -64,28 +65,6 @@ private:
     string user;
     string contra;
 
-
-
-
-
-
-
-
-
-
-
-/*!
- *\var _abrir
- * \var contra2
- * \var sql
- * \var user
- * \var contra
- */
-    QSqlDatabase _abrir; /*!<  QSqlDatabase variable. nos permite abrir la base de datos. */
-    QString contra2;    /*!<   QString variable. Guarda el valor que esta en la DB. */
-    QString sql;     /*!<   QString variable. nos permite hacer la consulta. */
-//    QString user;    /*!<   QString variable. Guarda el usuario ingresado. */
-//    QString contra;  /*!<   QString variable. Guarda la contraseña ingresada. */
 };
 
 #endif // USUARIO_H

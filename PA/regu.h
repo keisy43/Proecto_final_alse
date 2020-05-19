@@ -5,6 +5,12 @@
 #include"db_local.h"
 #include "qstring.h"
 #include <string>
+/*!
+ *@class  regu
+ * @brief Esta clase denominada regu maneja la conexión con la ventana de dialogo donde
+ * se registran los datos de un usuario nuevo.
+ */
+
 /**
  * @brief edadus
  * Es una variable externa tipo entero que se declara de esta
@@ -13,11 +19,7 @@
  */
 extern int edadus;
 namespace Ui {
-/*!
- * @brief The QDialog class
- * @details Esta clase denominada regu maneja la conexión con la ventana de dialogo donde
- * se registran los datos de un usuario nuevo.
- */
+
 class regu;
 }
 
@@ -63,8 +65,8 @@ private slots:
 private:
     Ui::regu *ui;
     /**
-   * @brief _db
-   * Se trata de una varible de la clase db_local que usamos para realizar varias operaciones relacionadas con la base de datos.
+   *@variable _db
+   *@brief Se trata de una varible de la clase db_local que usamos para realizar varias operaciones relacionadas con la base de datos.
    */
     db_local _db;
 

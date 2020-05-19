@@ -9,7 +9,10 @@
 #include <vector>
 #include "qstring.h"
 #include "db_local.h"
-
+/**
+ *@class prueba
+ *@brief Esta clase maneja la ventana de la prueba de agilidad para el paciente.
+ */
 
 
 /**
@@ -40,10 +43,7 @@ extern int _estado, _estado2;
   */
 extern int tiempo;
 namespace Ui {
-/**
- *@brief prueba
- * Esta clase maneja la ventana de la prueba de agilidad para el paciente.
- */
+
 class prueba;
 }
 
@@ -62,10 +62,11 @@ public:
      *
      */
     ~prueba();
-
-private slots:
+  void insertar();
+  void resultados();
+public slots:
     void cambio_estado(void );
-    void insertar();
+
     void on_boton1_clicked();
     void on_boton2_clicked();
     void on_boton3_clicked();
@@ -77,7 +78,7 @@ private slots:
     void on_boton9_clicked();
     void on_boton10_clicked();
     void on_boton11_clicked();
-    void resultados();
+
 
 
 
@@ -85,7 +86,7 @@ private slots:
 private:
     Ui::prueba *ui;
     /**
-     * @brief _timer
+     *@brief _timer
      * Es un puntero tipo Qtimer.
      */
     QTimer  *_timer;

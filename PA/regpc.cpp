@@ -20,7 +20,7 @@ regpc::regpc(QWidget *parent) :
     ui(new Ui::regpc)
 {
     ui->setupUi(this);
-    _bd.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
+
 
 }
 /**
@@ -30,17 +30,16 @@ regpc::regpc(QWidget *parent) :
 regpc::~regpc()
 {
     delete ui;
-     _bd.cerrarDB();
+
 }
 /**
- * @brief regpc::on_pushButton_clicked()
+ * @brief regpc::on_guardar_clicked
  * @details Se asignan los datos ingresados en la ventana QDialog, referentes a los datos del paciente,a unas variables
  * que se le pasan por referencia a la función cargarpaciente para que guarde los valores
- * en la base de datos.
+ * en la base de datos, al hacerle click al boton guardar.
  */
-void regpc::on_pushButton_clicked()
+void regpc::on_guardar_clicked()
 {
-
     nombre=ui->nombrep->text().toStdString();
     apellido=ui->apellidop_2->text().toStdString();
     docident = ui->docidtp->text().toStdString();
@@ -53,19 +52,19 @@ void regpc::on_pushButton_clicked()
 
     fn=to_string (dia)+"-"+ to_string (mes)+"-"+to_string (ano);
     calcularedad();
-   _bd.cargarpaciente(nombre,apellido,docident,fn ,gn, direccion,rz,ningresos,edad);
+   _ac.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
+   _ac.cargarpaciente(nombre,apellido,docident,fn ,gn, direccion,rz,ningresos,edad);
+   _ac.cerrarDB();
    this->hide();
    menu z(this);
    z.setModal(true);
    z.show();
    z.exec();
 
-
-
 }
 /**
  * @brief regpc::calcularedad
- * Esta función es usada para calcular la edad del paciente, para ello se usa la fecha
+ * @details Esta función es usada para calcular la edad del paciente, para ello se usa la fecha
  * de nacimiento y la fecha actual, estas dos en dias, meses y años.
  * Y retorna la edad del paciente.
  */
@@ -112,7 +111,7 @@ void regpc::calcularedad(){
 
 /**
  * @brief regpc::on_generof_clicked
- * En esta función lo que hacemos es guardar en la variable gn, referente al género de la persona,
+ * @details En esta función lo que hacemos es guardar en la variable gn, referente al género de la persona,
  * mediante un radiobutton, en este caso se guarda el string "Femenino".
  */
 void regpc::on_generof_clicked()
@@ -122,11 +121,13 @@ void regpc::on_generof_clicked()
 
 /**
  * @brief regpc::on_generom_clicked
- * En esta función lo que hacemos es guardar en la variable gn, referente al género de la persona,
+ * @details En esta función lo que hacemos es guardar en la variable gn, referente al género de la persona,
  * mediante un radiobutton, en este caso se guarda el string "Masculino".
  */
 void regpc::on_generom_clicked()
 {
     gn= ui->generom->text().toStdString();
 }
+
+
 

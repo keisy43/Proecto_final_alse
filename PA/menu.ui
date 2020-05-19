@@ -33,7 +33,7 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QPushButton" name="prueba">
+   <widget class="QPushButton" name="ingresarPaciente">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -46,7 +46,7 @@
      <string>Ingresar paciente</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="RegistrarPaciente">
     <property name="geometry">
      <rect>
       <x>20</x>

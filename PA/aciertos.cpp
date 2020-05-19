@@ -45,7 +45,7 @@ aciertos::~aciertos()
 
 /**
  * @brief aciertos::on_volvermenu_clicked
- * Esta función es una slot privada que cierra la ventana y nos
+ * @details Esta función es una slot  que cierra la ventana y nos
  * devuelve a la venta de menu..
  */
 
@@ -60,12 +60,12 @@ void aciertos::on_volvermenu_clicked()
 }
 
 /**
- * @brief aciertos::on_pushButton_2_clicked
- * Esta función es un slot privado que cierra la ventana
+ * @brief aciertos::on_salir_clicked
+ * @details Esta función es una slot  que cierra la ventana
  * al hacer click en el botón de salir, cerrando así, el programa.
  */
-void aciertos::on_pushButton_2_clicked()
-{
-    this->close();
-}
 
+void aciertos::on_salir_clicked()
+{
+     this->close();
+}

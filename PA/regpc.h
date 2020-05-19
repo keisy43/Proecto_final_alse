@@ -7,6 +7,15 @@
 #include "db_local.h"
 #include <vector>
 /**
+ *@class regpc
+ * @brief  Esta clase maneja la conexión con la ventana de dialogo QDialog donde
+ * se registran los datos de un paciente nuevo.
+ *
+ * @details
+ */
+
+
+/**
  * @brief edad
  * Es una variable externa tipo entero que se declara de esta
  * manera para ser usada en varios archivos del proyecto de una manera fácil y cómoda retornando su valor asignado.
@@ -14,13 +23,7 @@
 extern int edad;
 
 namespace Ui {
-/**
- * @brief The regpc class
- * Esta clase maneja la conexión con la ventana de dialogo QDialog donde
- * se registran los datos de un paciente nuevo.
- *
- * @details
- */
+
 class regpc;
 }
 
@@ -60,21 +63,24 @@ public:
     int anioactual;    /*!< Es una variable que almacena el valor real del año actual arrojado por el sistema. */
     int aniomenos;     /*!< En esta variable se almacena el valor del año de nacimiento ingresado por el paciente y le suma uno para futuros cálculos */
 
-private slots:
+    db_local _ac;      /*!< Se trata de una varible de la clase db_local que usamos para realizar varias operaciones relacionadas con la base de datos.*/
+
     void calcularedad();
-    void on_pushButton_clicked();
+
+public slots:
+
+   void on_guardar_clicked();
 
     void on_generof_clicked();
 
     void on_generom_clicked();
 
+
+
+
 private:
     Ui::regpc *ui;
-    /**
-   * @brief _bd
-   * Se trata de una varible de la clase db_local que usamos para realizar varias operaciones relacionadas con la base de datos.
-   */
-  db_local _bd;
+
 
 };
 

@@ -6,7 +6,6 @@
 #include <string>
 #include "qstring.h"
 
-namespace Ui {
 /**
  * @class aciertos
  * @brief Esta clase maneja la conexión con la ventana de diálogo que
@@ -14,6 +13,9 @@ namespace Ui {
  *
  * @details
  */
+
+namespace Ui {
+
 class aciertos;
 }
 
@@ -34,11 +36,16 @@ public:
      */
     ~aciertos();
 
-private slots:
+public slots:
+
+
 
     void on_volvermenu_clicked();
+     void on_salir_clicked();
 
-    void on_pushButton_2_clicked();
+
+
+
 
 private:
     Ui::aciertos *ui;

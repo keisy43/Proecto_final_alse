@@ -122,6 +122,9 @@
 border-color: rgb(238, 238, 236);
 background-color: rgb(238, 238, 236);</string>
     </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="volvermenu">
     <property name="geometry">
@@ -139,7 +142,7 @@ background-color: rgb(238, 238, 236);</string>
      <string>Volver al menú</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="salir">
     <property name="geometry">
      <rect>
       <x>260</x>

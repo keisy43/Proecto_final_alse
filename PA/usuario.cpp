@@ -33,7 +33,7 @@ usuario::~usuario()
 
 /**
  * @brief usuario::on_Ru_clicked
- * Esta función maneja la conexión con el botón "Ru" que al hacerle click
+ * @details Esta función maneja la conexión con el botón "Ru" que al hacerle click
  * abrirá la ventana con el formulario para registrar a un usuario nuevo.
  */
 
@@ -48,8 +48,7 @@ void usuario::on_Ru_clicked()
 }
 /**
  * @brief regu::on_ingresar_clicked.
- *
- * En esta función se asignan los datos ingresados en la ventana QDialog a unas variables
+ * @details En esta función se asignan los datos ingresados en la ventana QDialog a unas variables
  * con las que se verifica si los valores ingresados están en la
  * en la base de datos y si es así, se abre la ventana siguiente .
  */
@@ -79,7 +78,7 @@ void usuario::on_ingresar_clicked()
 }
 /*!
  * @brief usuario::getContra()
- * Es la función get de la variable "contra" que recupera o consigue el valor
+ * @details Es la función get de la variable "contra" que recupera o consigue el valor
  * asignado en la función set para ser utilizado después.
  * @return El valor ingresado en la función set.
  */
@@ -89,7 +88,7 @@ string usuario::getContra() const
 }
 /**
  * @brief usuario::setContra
- * Es la función set de la variable "contra" que nos permite darle
+ * @details Es la función set de la variable "contra" que nos permite darle
  * un valor a esta.
  * @param value Es un puntero tipo string.
  */
@@ -100,7 +99,7 @@ void usuario::setContra(const string &value)
 }
 /**
  * @brief usuario::getUser
- * Es la función get de la variable "user" que recupera o consigue el valor
+ * @details Es la función get de la variable "user" que recupera o consigue el valor
  * asignado en la función set para ser utilizado después.
  * @return El valor ingresado en la función set.
  */
@@ -110,7 +109,7 @@ string usuario::getUser() const
 }
 /**
  * @brief usuario::setUser
- * Es la función set de la variable "user" que nos permite darle
+ * @details Es la función set de la variable "user" que nos permite darle
  * un valor a esta.
  * @param value Es un puntero tipo string.
  */

@@ -367,7 +367,7 @@ void prueba::cambio_estado(void){
 
 /**
  * @brief prueba::on_boton1_clicked
- * Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ * @details Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 1.
  */
 
@@ -382,7 +382,7 @@ void prueba::on_boton1_clicked()
 
 /**
  * @brief prueba::on_boton2_clicked
- *  Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ *  @details Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 2.
  */
 
@@ -395,7 +395,7 @@ void prueba::on_boton2_clicked()
 }
 /**
  * @brief prueba::on_boton3_clicked
- *  Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ * @details Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 3.
  */
 void prueba::on_boton3_clicked()
@@ -408,7 +408,7 @@ void prueba::on_boton3_clicked()
 }
 /**
  * @brief prueba::on_boton4_clicked
- * Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ * @details Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 4.
  */
 void prueba::on_boton4_clicked()
@@ -422,7 +422,7 @@ void prueba::on_boton4_clicked()
 }
 /**
  * @brief prueba::on_boton5_clicked
- *  Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ * @details Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 5.
  */
 void prueba::on_boton5_clicked()
@@ -437,7 +437,7 @@ void prueba::on_boton5_clicked()
 
 /**
  * @brief prueba::on_boton6_clicked
- *  Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ * @details Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 6.
  */
 
@@ -451,7 +451,7 @@ void prueba::on_boton6_clicked()
    }
 /**
  * @brief prueba::on_boton7_clicked
- *  Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ * @details Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 7.
  */
 
@@ -467,7 +467,7 @@ void prueba::on_boton7_clicked()
 }
 /**
  * @brief prueba::on_boton8_clicked
- *  Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ * @details Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 8.
  */
 void prueba::on_boton8_clicked()
@@ -483,7 +483,7 @@ void prueba::on_boton8_clicked()
 
 /**
  * @brief prueba::on_boton9_clicked
- *  Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ * @details Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 9.
  */
 
@@ -499,10 +499,9 @@ void prueba::on_boton9_clicked()
 
 /**
  * @brief prueba::on_boton10_clicked
- *  Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ * @details Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 10.
  */
-
 
 void prueba::on_boton10_clicked()
 {
@@ -517,7 +516,7 @@ void prueba::on_boton10_clicked()
 
 /**
  * @brief prueba::on_boton11_clicked
- *   Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
+ * @details  Esta función nos permite comparar si el botón que está pulsando el paciente es igual al botón que está prendido
  * y en caso de ser así aumenta el contador de los aciertos, al hacer click en el boton 11.
  */
 
@@ -534,7 +533,7 @@ void prueba::on_boton11_clicked()
 
 /**
  * @brief prueba::insertar
- * Esta función sirve para insertar los datos obtenidos en la prueba en
+ * @details Esta función sirve para insertar los datos obtenidos en la prueba en
  * la base de datos.
  */
 
@@ -548,7 +547,7 @@ void prueba::insertar(){
 
 /**
  * @brief prueba::resultados
- * Esta función nos muestra los resultados obtenidos
+ * @details Esta función nos muestra los resultados obtenidos
  * en la prueba como los aciertos y la nota.
  *
  */

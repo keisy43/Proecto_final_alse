@@ -19,7 +19,7 @@ regu::regu(QWidget *parent) :
     ui(new Ui::regu)
 {
     ui->setupUi(this);
-    _db.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
+
 
 }
 /**
@@ -29,18 +29,18 @@ regu::regu(QWidget *parent) :
 regu::~regu()
 {
     delete ui;
-      _db.cerrarDB();
+
 }
 
 /**
  * @brief regu::on_buttonBox_accepted
  * @details Se asignan los datos ingresados en la ventana QDialog, referentes al usuario, a unas variables
  * que se le pasan por referencia a la función cargarusuario para que guarde los valores
- * en la base de datos.
+ * en la base de datos, al hacer click en el boton okay.
  */
 void regu::on_buttonBox_accepted()
 {
-
+_db.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
    name=ui->nombre->text().toStdString();
    lastname=ui->apellido->text().toStdString();
    doci=ui->docident->text().toStdString();
@@ -52,15 +52,15 @@ void regu::on_buttonBox_accepted()
 
    fn=to_string (dia)+"-"+ to_string (mes)+"-"+to_string (ano);
    calcularedad();
-   _db.cargarusuario(name, lastname ,doci,fn,user,contra);
-   _db.cerrarDB();
+   _db.cargarusuario(name, lastname ,fn, doci,user,contra);
+ _db.cerrarDB();
 }
 
 /**
  * @brief regu::calcularedad
- * Esta función es usada para calcular la edad del usuario, para ello se usa la fecha
+ * @details Esta función es usada para calcular la edad del usuario, para ello se usa la fecha
  * de nacimiento y la fecha actual, estas dos en dias, meses y años.
- * Y retorna la edad del usuario.
+ * @return la edad del usuario.
  */
 
 void regu::calcularedad(){
