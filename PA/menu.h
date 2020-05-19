@@ -3,13 +3,15 @@
 
 #include <QDialog>
 
-namespace Ui {
 /**
- *@brief La clase menu
- * Esta clase maneja la conexión con la ventana de diálogo que nos permite elegir
+ *@class  menu
+ *@brief Esta clase maneja la conexión con la ventana de diálogo que nos permite elegir
  * entre ingresar un paciente para hacerle la prueba de agilidad o
  * registrar uno nuevo.
  */
+
+namespace Ui {
+
 class menu;
 }
 
@@ -29,11 +31,12 @@ public:
      */
     ~menu();
 
-private slots:
-    void on_pushButton_clicked();
+public slots:
 
 
-    void on_prueba_clicked();
+    void on_RegistrarPaciente_clicked();
+
+    void on_ingresarPaciente_clicked();
 
 private:
     Ui::menu *ui;

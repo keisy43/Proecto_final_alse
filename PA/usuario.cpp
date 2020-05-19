@@ -72,7 +72,7 @@ void usuario::on_ingresar_clicked()
         this->close();
     }
     else{
-        ui->aviso->setText("Contraseña incorrecta");
+        ui->aviso->setText("Contraseña  o usuario incorrectos");
     }
     bd.cerrarDB();
 }

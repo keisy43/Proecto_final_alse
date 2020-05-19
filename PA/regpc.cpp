@@ -53,7 +53,7 @@ void regpc::on_guardar_clicked()
     fn=to_string (dia)+"-"+ to_string (mes)+"-"+to_string (ano);
     calcularedad();
    _ac.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
-   _ac.cargarpaciente(nombre,apellido,docident,fn ,gn, direccion,rz,ningresos,edad);
+   _ac.cargarpaciente(nombre,apellido,docident,fn ,gn,rz,direccion,ningresos,edad);
    _ac.cerrarDB();
    this->hide();
    menu z(this);
