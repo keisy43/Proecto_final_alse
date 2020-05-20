@@ -35,20 +35,22 @@ paciente::~paciente()
  */
 void paciente::on_RealizarPrueba_clicked()
 {
-    this->hide();
+    //this->hide();
     paciente a;
     db_local ac;
     ac.abrirDB("/home/alseuser/Proecto_final_alse/PA/_Datos");
     a.setNombre(ui->nombrep->text().toStdString());
     a.setDoci(ui->idp->text().toStdString());
     if(ac.verificarpaciente(a)==true){
+        this->close();
         tiempod a(this);
         a.show();
         a.exec();
 
+
     }
     ac.cerrarDB();
-    this->close();
+
 }
 
 /**

@@ -40,7 +40,7 @@ public slots:
 
 
 
-    void on_volvermenu_clicked();
+     void on_volvermenu_clicked();
      void on_salir_clicked();
 
 
